@@ -1,0 +1,247 @@
+@import "../../components/base/vars";
+@import "../../components/base/smartgrid";
+@import "../../components/laraberg/laraberg.css";
+
+body {
+    background: #1d2733;
+}
+
+.contacts {
+    min-height: 100vh;
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 130px 25px 200px 25px;
+    }
+
+    &__address {
+        min-width: 30%;
+        padding-right: 25px;
+    }
+
+    &__form {
+        min-width: 50%;
+    }
+
+    .address {
+        padding-top: 65px;
+
+        &__title {
+            font-weight: bold;
+            font-size: 26px;
+            line-height: 58px;
+            color: $white;
+        }
+
+        &__point {
+            display: block;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 34px;
+            color: $white;
+            margin-bottom: 20px;
+        }
+
+        @include sm-block{
+
+            &__title {
+                font-size: 34px;
+                line-height: 34px;
+                margin-bottom: 32px;
+            }
+
+            &__wrap{
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            &__form{
+                order: 1;
+            }
+            &__address{
+                order: 2;
+            }
+
+        }
+    }
+
+
+    .form {
+        &__title {
+            min-width: 100%;
+            font-weight: bold;
+            font-size: 64px;
+            line-height: 65px;
+            color: $white;
+            margin-bottom: 45px;
+        }
+
+        &__input {
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        &__input input, &__input textarea {
+            display: block;
+            width: 100%;
+            font-weight: normal;
+            font-size: 26px;
+            line-height: 58px;
+            padding: 8px 15px;
+            color: $white;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #56BFBD;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        &__checkbox {
+            margin-top: 10px;
+            margin-bottom: 60px;
+        }
+
+        &__checkbox input {
+            display: none;
+        }
+
+        &__checkbox input:checked + label {
+            &:before {
+                content: url("./assets/check.svg");
+            }
+        }
+
+        &__checkbox label {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            color: $white;
+            cursor: pointer;
+
+            &:before {
+                position: relative;
+                top: 3px;
+                padding-right: 20px;
+                content: url("./assets/uncheck.svg");
+            }
+        }
+
+        &__input small {
+            position: absolute;
+            left: 0;
+            bottom: 13px;
+            font-size: 14px;
+            color: #FF002E;
+        }
+
+        &__action{}
+
+        &__btn {
+            font-weight: bold;
+            font-size: 26px;
+            color: $white;
+            padding: 16px 110px;
+            background: #56BFBD;
+            border: 2px solid #56BFBD;
+            box-sizing: border-box;
+            border-radius: 70px;
+
+            &.disabled {
+                cursor: not-allowed;
+                background: none;
+            }
+        }
+
+        @include lg-block{
+            &__input input, &__input textarea {
+                font-size: 18px;
+                line-height: 36px;
+            }
+
+            &__checkbox label {
+                font-size: 22px;
+            }
+
+            &__action{
+                text-align: center;
+            }
+
+            &__btn {
+                font-size: 22px;
+            }
+        }
+
+        @include sm-block{
+
+            &__title {
+                font-size: 34px;
+                line-height: 34px;
+                margin-bottom: 32px;
+            }
+            &__btn {
+                padding: 16px 60px;
+            }
+        }
+
+
+    }
+
+    .accept{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 80px 25px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid #56BFBD;
+        box-sizing: border-box;
+        border-radius: 5px;
+        &__close{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        &__close:before{
+            content: url("./assets/close.svg");
+        }
+        &__close:hover:before{
+            opacity: .8;
+        }
+        &__icon{
+            height: 106px;
+            margin-bottom: 70px;
+        }
+
+        &__text{
+            text-align: center;
+            font-weight: normal;
+            font-size: 26px;
+            color: $white;
+        }
+
+
+    }
+
+
+    @include sm-block{
+
+
+        &__wrap{
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 130px 25px 200px 25px;
+        }
+
+        &__form{
+            order: 1;
+            margin-bottom: 40px;
+        }
+        &__address{
+            order: 2;
+        }
+
+    }
+}

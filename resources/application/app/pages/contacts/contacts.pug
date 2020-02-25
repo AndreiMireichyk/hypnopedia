@@ -1,0 +1,34 @@
+extends ../../components/base/base
+
+block content
+    main.contacts
+        div.contacts__wrap
+            div.contacts__address.address
+                div.address__title Address
+                a(href="").address__point 2715 Hidden Road, bld 8, California, USA
+                div.address__socials
+                    a(href="#" target="_blank").address__social
+                        img(src=require("./assets/fbook.svg"))
+
+            div.contacts__form#js-form
+                div.form(v-if="!accept")
+                    h1.form__title Contact
+                    div.form__input(:class="{'has-error': error.name.length }")
+                        input(placeholder='Name' v-model='name')
+                        small {{ error.name }}
+                    div.form__input(:class="{'has-error': error.contact.length }")
+                        input(placeholder='Contact' v-model='contact')
+                        small {{ error.contact }}
+                    div.form__input(:class="{'has-error': error.message.length }")
+                        textarea(placeholder='Message' v-model='message')
+                        small {{ error.message }}
+                    div.form__checkbox
+                        input#accept(type="checkbox" v-model="accept_policy")
+                        label(for='accept') I accept personal data processing agreement
+                    div.form__action
+                        a.form__btn(href="javascript:void(0)" :class="{'disabled': !accept_policy || loading }" @click.stop="send") Submit
+                div.accept(v-else)
+                    a(href="javascript:void(0)" @click.stop="accept=false").accept__close
+                    img(src=require('./assets/accept.svg')).accept__icon
+                    p.accept__text Excellent! We'll contact you soon.
+

@@ -1,0 +1,83 @@
+@import "../base/vars";
+@import "../base/smartgrid";
+
+.footer {
+
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+  background-image: url("assets/bg-v1.svg?1");
+  min-height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -200px;
+
+
+  &__wrap {
+    flex-grow: 1;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto 80px auto;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    &__item {
+      font-weight: 500;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+
+      img{
+        height: 39px;
+        width: auto;
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    justify-content: flex-end;
+
+    &__item {
+      margin-left: 10px;
+    }
+
+    &__item.fb:after {
+      content: url("./assets/fb.svg");
+    }
+
+    &__item.tw:after {
+      content: url("./assets/tw.svg");
+    }
+  }
+
+  @include sm-block{
+    padding-top: 250px;
+    min-height: auto;
+    background-position: center center;
+
+    .menu{
+      flex-direction: column;
+      &__item:first-child{
+        margin-bottom: 32px;
+      }
+      &__item{
+        margin-bottom: 20px;
+      }
+    }
+
+    .socials {
+      justify-content: center;
+      &__item {
+        margin: 0 7px;
+      }
+    }
+
+  }
+}
