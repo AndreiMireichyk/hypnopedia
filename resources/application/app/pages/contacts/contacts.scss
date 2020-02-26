@@ -23,7 +23,7 @@ body {
     }
 
     &__form {
-        min-width:532px;
+        max-width:532px;
     }
 
     .address {
@@ -242,6 +242,7 @@ body {
         }
 
         &__form{
+            max-width: none;
             order: 1;
             margin-bottom: 40px;
         }
