@@ -1,11 +1,11 @@
 @extends('app.layout.layout')
 
 @section('css')
-    <link href="{{asset('/css/index.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/index.css')}}?{{env('VERSION')}}" rel="stylesheet">
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{asset('/js/index.bundle.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/index.bundle.js')}}?{{env('VERSION')}}"></script>
 @endsection
 
 
@@ -16,8 +16,8 @@
                 <div class="sc-1__info">
                     <h1 class="sc-1__title">Another way<br>to your mental health<br>and motivation</h1>
                     <h2 class="sc-1__subtitle">Improve yourself while sleeping with affirmations</h2>
-                    <a class="sc-1__app-btn" href="{{env('APP_STORE_URI')}}" target="_blank">
-                        <img src="{{asset('/images/app_store_cta.svg')}}" alt="install app">
+                    <a class="sc-1__app-btn" href="https://go.onelink.me/app/af8bdc55" target="_blank">
+                        <img src="{{asset('/images/app_store_cta.svg')}}?{{env('VERSION')}}" alt="install app">
                     </a>
                 </div>
                 <div class="sc-1__app"></div>
@@ -33,26 +33,29 @@
                     sensors to determine the correct phase of sleep for playing affirmations. After a productive sleep the
                     smart alarm clock will wake you up at the most convenient time before the set wake-up time
                 </p>
-                <p class="sc-2__action"><a class="btn" href="{{env('APP_STORE_URI')}}" target="_blank">Try
-                        for free</a></p>
+                <p class="sc-2__action">
+                    <a class="btn" href="https://go.onelink.me/app/18870943" target="_blank">
+                        Try for free
+                    </a>
+                </p>
                 <ul class="sc-2__steps">
                     <li class="sc-2__step-item">
-                        <img class="sc-2__step-icon" src="{{asset('/images/install-v1.svg')}}" alt="Install">
+                        <img class="sc-2__step-icon" src="{{asset('/images/install-v1.svg')}}?{{env('VERSION')}}" alt="Install">
                         <div class="sc-2__step-title">Install</div>
                         <div class="sc-2__step-desc">and launch<br>the application</div>
                     </li>
                     <li class="sc-2__step-item">
-                        <img class="sc-2__step-icon" src="{{asset('/images/choose-v1.svg')}}" alt="Choose">
+                        <img class="sc-2__step-icon" src="{{asset('/images/choose-v1.svg')}}?{{env('VERSION')}}" alt="Choose">
                         <div class="sc-2__step-title">Choose</div>
                         <div class="sc-2__step-desc">affirmations and set<br>the alarm time</div>
                     </li>
                     <li class="sc-2__step-item">
-                        <img class="sc-2__step-icon" src="{{asset('/images/sync-v1.svg')}}" alt="Synchronize">
+                        <img class="sc-2__step-icon" src="{{asset('/images/sync-v1.svg')}}?{{env('VERSION')}}" alt="Synchronize">
                         <div class="sc-2__step-title">Synchronize</div>
                         <div class="sc-2__step-desc">with Apple Watch<br>to invoke its sensors</div>
                     </li>
                     <li class="sc-2__step-item">
-                        <img class="sc-2__step-icon" src="{{asset('/images/night-v1.svg')}}" alt="Nighty-night!">
+                        <img class="sc-2__step-icon" src="{{asset('/images/night-v1.svg')}}?{{env('VERSION')}}" alt="Nighty-night!">
                         <div class="sc-2__step-title">Nighty-night!</div>
                         <div class="sc-2__step-desc">Our algorithm will take care<br>of you during sleep</div>
                     </li>
@@ -64,23 +67,23 @@
                 <div class="sc-3__title">Main features</div>
                 <div class="sc-3__features">
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/1.png')}}" alt="HYPNOPEDIA">
+                        <img class="sc-3__feature-cover" src="{{asset('/images/1.png')}}?{{env('VERSION')}}" alt="HYPNOPEDIA">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">HYPNOPEDIA</div>
-                            <div class="sc-3__feature-desc">Unique algorithms<br>based on recent<br>sleep studies</div>
+                            <div class="sc-3__feature-desc">Based on unique<br>algorithms determines<br>your sleep phase<br>and plays affirmations</div>
                         </div>
                     </div>
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/2.png')}}" alt="SMART-ALARM">
+                        <img class="sc-3__feature-cover" src="{{asset('/images/2.png')}}?{{env('VERSION')}}" alt="SMART-ALARM">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">SMART-ALARM</div>
-                            <div class="sc-3__feature-desc">Built-in Smart Alarm<br>wakes you at the most<br>convenient
-                                moment<br>of your sleep
+                            <div class="sc-3__feature-desc">
+                                Built-in Smart Alarm<br>wakes you at the most<br>convenient moment
                             </div>
                         </div>
                     </div>
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/3.png')}}" alt="360-DEGREE ASMR">
+                        <img class="sc-3__feature-cover" src="{{asset('/images/3.png')}}?{{env('VERSION')}}" alt="360-DEGREE ASMR">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">360-DEGREE ASMR</div>
                             <div class="sc-3__feature-desc">ASMR sounds with<br>3D effect for deep<br>relaxation and
@@ -89,15 +92,15 @@
                         </div>
                     </div>
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/4.png')}}" alt="STATISTICS">
+                        <img class="sc-3__feature-cover" src="{{asset('/images/4.png')}}?{{env('VERSION')}}" alt="STATISTICS">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">STATISTICS</div>
-                            <div class="sc-3__feature-desc">Your personal<br>summary data</div>
+                            <div class="sc-3__feature-desc">Summary data<br>of your last<br>sleep session</div>
                         </div>
                     </div>
                 </div>
                 <div class="sc-3__action">
-                    <a class="btn" href="{{env('APP_STORE_URI')}}" target="_blank">Try for free</a>
+                    <a class="btn" href="https://go.onelink.me/app/73f39e5a" target="_blank">Try for free</a>
                 </div>
             </div>
         </section>

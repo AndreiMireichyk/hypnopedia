@@ -1,17 +1,21 @@
 import './header.scss';
-import MenuSpy from 'menuspy';
-
-function smoothlyScroll() {
+(function () {
     $("[data-menu-spy]").on("click", function (event) {
-        event.preventDefault();
 
-        let id = $(this).attr('href'),
+
+        let id = $(this).attr('href').replace('/', ''),
 
             top = $(id).offset().top;
 
+        if(top) event.preventDefault();
         $('body,html').animate({scrollTop: top}, 750);
     });
-}
+})();
+/*
+
+import MenuSpy from 'menuspy';
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -45,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let elm = document.querySelector('.header__menu');
     let ms = new MenuSpy(elm);
 
-    smoothlyScroll();
+
 
 });
+*/

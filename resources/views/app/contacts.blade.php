@@ -1,19 +1,24 @@
 @extends('app.layout.layout')
 
 @section('css')
-    <link href="{{asset('/css/contacts.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/contacts.css?v1')}}?{{env('VERSION')}}" rel="stylesheet">
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{asset('/js/contacts.bundle.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/contacts.bundle.js?v1')}}?{{env('VERSION')}}"></script>
 @endsection
 
 @section('content')
     <main class="contacts">
         <div class="contacts__wrap">
             <div class="contacts__address address">
-                <div class="address__title">Address</div><a class="address__point" href="">2715 Hidden Road, bld 8, California, USA</a>
-                <div class="address__socials"><a class="address__social" href="#" target="_blank"><img src="/images/fbook.svg"></a></div>
+                <div class="address__title">Address</div>
+                <a class="address__point" href="">Belarus, Minsk, Karla Marksa 25, room 77 , 220030</a>
+                <div class="address__socials">
+                    <a class="address__social" href="https://www.facebook.com/hypnopedia.application" target="_blank">
+                        <img src="/images/fbook.svg">
+                    </a>
+                </div>
             </div>
             <div class="contacts__form" id="js-form">
                 <div class="form" v-if="!accept">
