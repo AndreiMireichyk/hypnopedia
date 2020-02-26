@@ -11,7 +11,7 @@ import './header.scss';
         $('body,html').animate({scrollTop: top}, 750);
     });
 })();
-/*
+
 
 import MenuSpy from 'menuspy';
 
@@ -52,4 +52,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
-*/
+
