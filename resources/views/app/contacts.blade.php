@@ -14,6 +14,7 @@
             <div class="contacts__address address">
                 <div class="address__title">Address</div>
                 <a class="address__point" href="">Belarus, Minsk, Karla Marksa 25, room 4H , 220030</a>
+                <a class="address__point" href="mailto:info@hypnopedia.site">info@hypnopedia.site</a>
                 <div class="address__socials">
                     <a class="address__social" href="https://www.facebook.com/hypnopedia.application" target="_blank">
                         <img src="/images/fbook.svg">
