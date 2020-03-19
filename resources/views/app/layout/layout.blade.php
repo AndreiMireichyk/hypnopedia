@@ -75,6 +75,20 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH85TDP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <script type="text/javascript" src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
+<script>
+    window.productHuntUpcoming = {
+        appId: 28840,
+        position: 'bottomLeft',
+    };
+
+    (function(doc, scr, src, a, b) {
+        a = doc.createElement(scr);
+        b = doc.getElementsByTagName(scr)[0];
+        a.async = true;
+        a.src = src;
+        b.parentNode.insertBefore(a, b);
+    })(document, 'script', 'https://assets.producthunt.com/assets/upwigloader.js');
+</script>
 @yield('js')
 </body>
 </html>
