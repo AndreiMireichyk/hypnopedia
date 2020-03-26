@@ -13,3 +13,4 @@
 
 Route::get('/', 'AppController@home')->name('home');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
+Route::post('/ph_subscribe', 'AppController@phSubscribe')->name('phSubscribe');

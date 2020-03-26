@@ -19,13 +19,18 @@
     max-width: 1200px;
     padding: 0 25px;
     margin: 0 auto 80px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
   .menu {
+      flex-grow: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
+      margin-right: 30px;
 
     &__item {
       font-weight: 500;
@@ -43,8 +48,10 @@
   .socials {
     display: flex;
     justify-content: flex-end;
+      padding-bottom: 20px;
 
-    &__item {
+
+      &__item {
       margin-left: 10px;
     }
 
@@ -57,6 +64,15 @@
     }
   }
 
+  @include md-block{
+      &__wrap{
+          flex-wrap: wrap;
+      }
+      .menu {
+          width: 100%;
+          margin-right: 0;
+      }
+  }
   @include sm-block{
     padding-top: 250px;
     min-height: auto;
