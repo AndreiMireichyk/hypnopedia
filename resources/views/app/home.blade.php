@@ -28,7 +28,7 @@
                 <div class="sc-2__title">How it works?</div>
                 <p class="sc-2__desc">
                     Recent somnology studies confirm that a person is able to perceive information in
-                    certain sleep phases to infix existing knowledge. <a  class="sc-2__post-link" href="https://www.sciencedirect.com/science/article/pii/S0960982214009944">Based on these studies</a>, we have created an algorithm
+                    certain sleep phases to infix existing knowledge. <a  class="sc-2__post-link" target="_blank" href="https://www.sciencedirect.com/science/article/pii/S0960982214009944">Based on these studies</a>, we have created an algorithm
                     that will help you improve your mental health and increase motivation. Hypnopedia uses Apple Watch
                     sensors to determine the correct phase of sleep for playing affirmations. After a productive sleep the
                     smart alarm clock will wake you up at the most convenient time before the set wake-up time
