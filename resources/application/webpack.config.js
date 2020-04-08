@@ -5,6 +5,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 // Modules settings
 const DevServer = require('./webpack/devserver');
@@ -14,6 +15,7 @@ const Sass = require('./webpack/sass');
 const Css = require('./webpack/css');
 const CssExtract = require('./webpack/css.extract');
 const FileLoader = require('./webpack/fileloader');
+const Vue = require('./webpack/vue');
 
 const PATH = {
     src: path.resolve(__dirname, 'app'),
@@ -51,7 +53,11 @@ const common = {
         new webpack.ProvidePlugin({
             $: 'jquery',
         }),
+
+        new VueLoaderPlugin(),
+
         new CleanWebpackPlugin(PATH.build)
+
     ],
 
     optimization: {
@@ -78,6 +84,7 @@ module.exports = function (env) {
             Pug(),
             Babel(),
             CssExtract(),
+            Vue(),
             FileLoader(env)
         ]);
     }
@@ -91,6 +98,7 @@ module.exports = function (env) {
             Sass(),
             Css(),
             FileLoader(env),
+            Vue(),
             DevServer(PATH.build)
         ]);
     }

@@ -111,25 +111,40 @@
                     <div class="science__list">
                         <div class="science__item">
                             <div class="science__title">Nature Communications</div>
-                            <div class="science__desc">Formation and suppression of acoustic memories during human sleep
-                            </div>
-                            <div class="science__action">
+                            <div class="science__desc">
+                                Formation and suppression of acoustic memories during human sleep
                                 <a class="science__btn" href="https://www.nature.com/articles/s41467-017-00071-z" target="_blank">read more &raquo;</a>
                             </div>
                         </div>
                         <div class="science__item">
                             <div class="science__title">Oxford academic</div>
-                            <div class="science__desc">Implicit memory for words heard during sleep</div>
-                            <div class="science__action">
+                            <div class="science__desc">
+                                Implicit memory for words heard during sleep
                                 <a class="science__btn" href="https://academic.oup.com/nc/article/2016/1/niw014/2757134" target="_blank">read more &raquo;</a>
                             </div>
                         </div>
                         <div class="science__item">
                             <div class="science__title">ScienceDirect</div>
-                            <div class="science__desc">Inducing task-relevant responses to speech in the sleeping brain
-                            </div>
-                            <div class="science__action">
+                            <div class="science__desc">
+                                Inducing task-relevant responses to speech in the sleeping brain
                                 <a class="science__btn" href="https://www.sciencedirect.com/science/article/pii/S0960982214009944" target="_blank">read more &raquo;</a>
+                            </div>
+                        </div>
+                        <div class="science__item">
+                            <div class="science__title">ResearchGate</div>
+                            <div class="science__desc">
+                                The cessation of rumination through self-affirmation
+                                <a class="science__btn" href="https://www.researchgate.net/publication/232588088_The_cessation_of_rumination_through_self-affirmation" target="_blank">read more &raquo;</a>
+                            </div>
+                        </div>
+                        <div class="science__item">
+                            <div class="science__title">
+                                The National Center
+                                for Biotechnology Information
+                            </div>
+                            <div class="science__desc">
+                                Self-affirmation alters the brain’s response to health messages and subsequent behavior change
+                                <a class="science__btn" href="https://www.researchgate.net/publication/44632875_When_Self-Affirmations_Reduce_Defensiveness_Timing_Is_Key" target="_blank">read more &raquo;</a>
                             </div>
                         </div>
                     </div>

@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff40d45a-fc9d-4ed0-b239-9360f4606bb2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/application/app/components/ph_wigdet/Widget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/application/app/components/ph_wigdet/assets/author.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hypnopedia.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hypnopedia.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/resources/views/app/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/home.blade.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/common.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/common.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/contacts.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/contacts.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/index.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/application/app/components/base/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/application/app/components/base/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/application/app/components/base/base.pug" beforeDir="false" afterPath="$PROJECT_DIR$/resources/application/app/components/base/base.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/application/app/components/footer/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/resources/application/app/components/footer/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/application/app/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/application/app/components/footer/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+>>>>>>> 7e86bf78e7cde2b1b1cbd513f4cb23270b6222eb
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +130,11 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YIUTng0mx9aXLTy1Kc04xdHt15" />
@@ -136,23 +164,23 @@
       <recent name="C:\OSPanel\domains\hypnopedia.test\resources\views\app\layout" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -171,13 +199,33 @@
       <workItem from="1582791944133" duration="398000" />
       <workItem from="1582879384991" duration="588000" />
       <workItem from="1582892251280" duration="356000" />
+<<<<<<< HEAD
       <workItem from="1584621630674" duration="430000" />
       <workItem from="1586336335348" duration="43000" />
+=======
+      <workItem from="1584621630674" duration="50000" />
+      <workItem from="1584694359169" duration="1924000" />
+      <workItem from="1585251945563" duration="510000" />
+      <workItem from="1585261959323" duration="1039000" />
+>>>>>>> 7e86bf78e7cde2b1b1cbd513f4cb23270b6222eb
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582644445809">
