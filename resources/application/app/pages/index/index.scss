@@ -183,6 +183,21 @@
         line-height: 25px;
     }
 
+    &__post-link{
+        position: relative;
+        display: inline-block;
+        color: $white;
+       &:before{
+           content: "";
+           display: block;
+           width: 100%;
+           position: absolute;
+           bottom: 2px;
+           border-bottom: 1px solid #fff;
+
+       }
+    }
+
     //--Responsive
     @include lg-block {
         &__wrap {
