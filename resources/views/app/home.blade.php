@@ -14,7 +14,7 @@
         <section class="sc-1" id="about">
             <div class="sc-1__wrap">
                 <div class="sc-1__info">
-                    <h1 class="sc-1__title">Another way<br>to your mental health<br>and motivation</h1>
+                    <h1 class="sc-1__title">A new way to enhance<br>your mental health<br>and motivation</h1>
                     <h2 class="sc-1__subtitle">Improve yourself while sleeping with affirmations</h2>
                     <a class="sc-1__app-btn" href="https://go.onelink.me/app/af8bdc55" target="_blank">
                         <img src="{{asset('/images/app_store_cta.svg')}}?{{env('VERSION')}}" alt="install app">
