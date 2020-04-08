@@ -184,16 +184,18 @@
     }
 
     &__post-link{
+        font-weight: 600;
         position: relative;
         display: inline-block;
-        color: $white;
+        color: #56BFBD;
+
        &:before{
            content: "";
            display: block;
            width: 100%;
            position: absolute;
-           bottom: 2px;
-           border-bottom: 1px solid #fff;
+           bottom: 4px;
+           border-bottom: 1px solid #56BFBD;
 
        }
     }
