@@ -545,7 +545,7 @@
             background: url("./assets/sc4/andrew.jpg");
             background-size: contain;
             margin-bottom: 50px;
-            border: 9px solid $white;
+            box-shadow: 0 0 0 9px rgba(255,255,255,0.5);
         }
 
         &__name {
@@ -571,7 +571,7 @@
             color: #24375F;
             text-transform: capitalize;
             margin-bottom: 50px;
-            max-width: 340px;
+            max-width: 276px;
         }
 
         &__desc {
@@ -600,7 +600,7 @@
         }
 
         &__quote {
-
+max-width: 470px;
             margin: 0 auto 44px auto;
         }
 
