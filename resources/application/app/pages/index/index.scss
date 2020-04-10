@@ -448,13 +448,15 @@
         flex-basis: 50%;
         background: $white;
         box-sizing: border-box;
-        padding: 100px 25px 123px 137px;
+        padding: 100px 25px 0 137px;
     }
 
     &__doctor {
         flex-grow: 1;
         background: #f3f3f3;
-        padding: 110px 90px 123px 90px;
+        padding: 110px 25px 0 25px;
+
+        box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
@@ -463,6 +465,8 @@
     }
 
     .science {
+        display: flex;
+        flex-direction: column;
 
         &__h {
             font-weight: bold;
@@ -482,6 +486,18 @@
             line-height: 22px;
             color: #868B8F;
             letter-spacing: 0.1em;
+        }
+
+        &__list {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        &__desc:last-child {
+            margin-bottom: 0px;
         }
 
         &__desc {
@@ -529,6 +545,7 @@
             background: url("./assets/sc4/andrew.jpg");
             background-size: contain;
             margin-bottom: 50px;
+            border: 9px solid $white;
         }
 
         &__name {
@@ -554,7 +571,7 @@
             color: #24375F;
             text-transform: capitalize;
             margin-bottom: 50px;
-            max-width: 320px;
+            max-width: 340px;
         }
 
         &__desc {
@@ -583,22 +600,21 @@
         }
 
         &__quote {
-            width: 470px;
-            margin: 0 auto 25px auto;
+
+            margin: 0 auto 44px auto;
         }
 
         &__quote-text {
-            font-family: 'Proza Libre';
-            font-style: italic;
             font-weight: normal;
             font-size: 20px;
             line-height: 40px;
+            letter-spacing: 1px;
             color: #24375F;
         }
 
         &__quote-author {
             position: relative;
-            right: -20px;
+            right: 0;
             text-align: right;
             font-style: normal;
             font-weight: normal;
@@ -716,6 +732,8 @@
 
         outline: none;
 
+        transition: background-color 0.3s;
+
         i {
             padding-left: 12px;
             transition: transform 0.3s;
@@ -724,6 +742,10 @@
 
         i:before {
             color: #24375F;
+        }
+
+        &:hover {
+            background: rgba(196, 196, 196, 0.15);
         }
     }
 
