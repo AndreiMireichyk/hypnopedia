@@ -432,11 +432,12 @@
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    background: linear-gradient(to right, $white 50%, #f3f3f3 50%);
+
 
     &__wrap {
         display: flex;
         justify-content: space-between;
+        flex-direction: row-reverse;
         max-width: 1200px;
         margin: 0 auto;
 
@@ -444,10 +445,10 @@
 
     &__sciences {
         min-height: 100vh;
-        flex-basis: 40%;
+        flex-basis: 50%;
         background: $white;
         box-sizing: border-box;
-        padding: 100px 50px 123px 50px;
+        padding: 100px 25px 123px 137px;
     }
 
     &__doctor {

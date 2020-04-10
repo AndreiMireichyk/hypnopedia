@@ -40,6 +40,7 @@
             <div><a class="header__menu-item" href="/#how_it_work" data-menu-spy>HOW IT WORKS</a></div>
             <div><a class="header__menu-item" href="/#features" data-menu-spy>FEATURES</a></div>
             <div><a class="header__menu-item" href="/#science" data-menu-spy>SCIENCE</a></div>
+            <div><a class="header__menu-item" href="/#faq" data-menu-spy>FAQ</a></div>
             @if (Route::currentRouteName() == 'contacts')
                 <div class="active">
                     <a class="header__menu-item" href="{{route('contacts')}}">Contact</a>
