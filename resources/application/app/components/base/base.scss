@@ -9,9 +9,10 @@
 
 body{
     font-family: $font-sf;
+
     font-size: 1em;
     position: relative;
     max-width: 1920px;
     margin: 0 auto;
-
+    letter-spacing: 1px !important;
 }
