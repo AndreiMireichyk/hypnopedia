@@ -153,7 +153,7 @@
                     <div class="doctor__cover"></div>
                     <div class="doctor__name">Andrew Sokol</div>
                     <div class="doctor__position">CEO</div>
-                    <div class="doctor__role">Brain Geek, Associate Professor, MD,<br> PhD Belarussian state medical
+                    <div class="doctor__role">Brain Geek, Associate Professor, MD,<br> PhD Belarusian state medical
                         university
                     </div>
                     <div class="doctor__quote">

@@ -18,7 +18,7 @@
         <a href="javascript:void(0)" class="widget__offer-message" v-if="offerMessage">
             <a href="javascript:void(0)" class="widget__btn-close" @click="close()">&times;</a>
             <p class="widget__offer-text">
-                👋 Hi, I'm Dr. Andrew Sokol, MD, PhD Belarussian State Medical University, Brain geek and CEO of
+                👋 Hi, I'm Dr. Andrew Sokol, MD, PhD Belarusian State Medical University, Brain geek and CEO of
                 Hypnopedia, which is based on the scientific somnology research.
                 Hypnopedia uses Apple Watch sensors to identify the specific phase of sleep for playing affirmations
                 without waking you up to improve mental health and stimulate positive life changes.
