@@ -64,7 +64,7 @@
                     this.loading = false;
                     this.tnxMessage = true;
                 }).catch((error) => {
-                    this.loading = false;s
+                    this.loading = false;
                     alert('Error:( Please try again later.')
                 })
             },

@@ -17,7 +17,10 @@
                 <a class="address__point" href="mailto:info@hypnopedia.site">info@hypnopedia.site</a>
                 <div class="address__socials">
                     <a class="address__social" href="https://www.facebook.com/hypnopedia.application" target="_blank">
-                        <img src="/images/fbook.svg">
+                        <img src="{{asset('/images/fbook.svg')}}">
+                    </a>
+                    <a class="address__social" href="https://twitter.com/Hypnopedia_app" target="_blank">
+                        <img src="{{asset('/images/1200px-Twitter.png')}}">
                     </a>
                 </div>
             </div>
