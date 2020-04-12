@@ -23,7 +23,8 @@ body {
     }
 
     &__form {
-        max-width:532px;
+        flex-grow: 1;
+        max-width:618px;
     }
 
     .address {
@@ -52,10 +53,17 @@ body {
 
         &__social{
             margin-right: 20px;
-            img{
+
+
+            &.fb img{
                 height: 17px;
 
             }
+            &.tw img{
+                height: 15px;
+
+            }
+
         }
 
 
