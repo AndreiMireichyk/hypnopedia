@@ -1,11 +1,11 @@
 <template>
-    <div class="widget">
-        <a href="https://www.producthunt.com/posts/hypnopedia" target="_blank">
+    <div class="widget" v-if="showWidget">
+        <a href="javascript:void(0)" @click="setState">
             <img src="./assets/author.svg" alt="" class="widget__author">
         </a>
 
 
-        <a href="https://www.producthunt.com/posts/hypnopedia" class="widget__start-message"  target="_blank">
+        <a href="https://www.producthunt.com/posts/hypnopedia" class="widget__start-message" v-if="startMessage" @click="showOfferMessage">
             <span>Hey! Support us at Product Hunt</span>
             <img src="./assets/product-hunt-sales-tools.png" alt="">
         </a>
