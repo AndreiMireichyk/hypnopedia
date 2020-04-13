@@ -6,8 +6,8 @@
 
 
         <a href="javascript:void(0)" class="widget__start-message" v-if="startMessage" @click="showOfferMessage">
-            <p v-if="typing" class="widget__typing">Typing <span class="widget__dots">...</span></p>
-            <p v-else>Psst! Want early access to something cool?</p>
+            <span>Hey! Support us at Product Hunt</span>
+            <img src="./assets/product-hunt-sales-tools.png" alt="">
         </a>
 
         <a href="javascript:void(0)" class="widget__offer-message" v-if="tnxMessage" @click="setState">
@@ -128,18 +128,28 @@
             position: absolute;
             left: 120px;
             bottom: 50px;
-            padding: 15px;
-            border-radius: 16px;
-            display: block;
-            min-width: 200px;
+            padding: 10px 15px;
+
+            display: flex;
+           width: 199px;
             overflow: hidden;
-            background: #fff;
-            box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 10px 0;
+
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 20px;
+            color: #ffffff;
 
 
-            p {
-                display: flex;
-                align-items: flex-end;
+
+            background: #CA5D3B;
+            border: 2px solid #FFFFFF;
+
+            border-radius: 10px;
+
+
+            img{
+                width: 47px;
+                height: 47px;
             }
 
         }
@@ -237,7 +247,7 @@
                 position: absolute;
                 left: 80px;
                 bottom: 25px;
-                min-width: 180px;
+                width: 180px;
             }
 
             &__offer-message {
