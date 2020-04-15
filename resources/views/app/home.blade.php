@@ -214,6 +214,19 @@
                         </div>
                         <div class="sc-5__accordion-description">Hypnopedia does not affect sleep in any way, but uses this time to enhance your mental health and motivation. The app adapts to individual biological characteristics and works in tune with your lifestyle.</div>
                     </div>
+                    <div class="sc-5__accordion-item">
+                        <div class="sc-5__accordion-head">
+                            <div class="sc-5__accordion-title">What if i see "Watch Application is not installed"?</div><i class="icon-Polygon-1"></i>
+                        </div>
+                        <div class="sc-5__accordion-description">The Apple Watch app installs automatically and may take several minutes in some cases.
+                            If apps manual installation is set in the Apple Watch settings, then Hypnopedia installation must be confirmed in the ‘AVAILABLE APPS’ section of the Watch application.</div>
+                    </div>
+                    <div class="sc-5__accordion-item">
+                        <div class="sc-5__accordion-head">
+                            <div class="sc-5__accordion-title">What to do at "Wait till iPhone is synchronized with Apple Watch" stage?</div><i class="icon-Polygon-1"></i>
+                        </div>
+                        <div class="sc-5__accordion-description">Make sure that your Apple Watch is unlocked and the Hypnopedia logo appears on the screen. The synchronization process may take several minutes</div>
+                    </div>
                 </div>
             </div>
         </section>
