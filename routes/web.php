@@ -11,6 +11,16 @@
 |
 */
 
+//Auth Routs
+Auth::routes(['register' => false]);
+Route::get('/test', function () {
+    return view('welcome');
+})->name('home');
+Route::namespace('Cpanel')->prefix('cp')->name('cp.')->middleware('auth')->group(function () {
+    Route::get('/', 'DashBoardController@index')->name('dashboard');
+});
+
+
 Route::get('/', 'AppController@home')->name('home');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
 Route::post('/ph_subscribe', 'AppController@phSubscribe')->name('phSubscribe');
