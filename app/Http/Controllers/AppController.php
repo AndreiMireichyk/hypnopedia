@@ -31,6 +31,10 @@ class AppController extends Controller
             [
                 'email' => 'dnsxss@gmail.com',
                 'name' => 'Андрей',
+            ],
+            [
+                'email' => 'info@hypnopedia.site',
+                'name' => 'Info',
             ]
         ];
 
