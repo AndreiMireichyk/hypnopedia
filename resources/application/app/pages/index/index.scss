@@ -62,8 +62,7 @@
 
     &__app {
         min-width: 324px;
-        max-width: 35%  ;
-        min-height: 652px;
+        max-width: 35% ;
         height: calc(100vh - 165px);
     }
 
@@ -81,13 +80,14 @@
         }
 
         &__watch {
-            position: relative;
-            top: -40%;
-            left: -60%;
-            height: 45%;
+            position: absolute;
+           bottom: -10px;
+            left: -25%;
+            height: 40%;
+            width: 100%;
             background-size: contain;
             background-image: url('./assets/watch.png');
-            background-position: right bottom;
+            background-position: left center;
             background-repeat: no-repeat;
         }
 
@@ -109,10 +109,10 @@
 
         &__ring-1 {
             position: absolute;
-            top: 30px;
-            left: 30px;
-            width: calc(100% - 60px);
-            height: calc(100% - 60px);
+            top: 10%;
+            left: 10%;
+            width: calc(100% - 20%);
+            height: calc(100% - 20%);
             border-radius: 50%;
             border: 1px solid #5C7372;
 
@@ -122,10 +122,10 @@
                 position: absolute;
                 display: block;
                 content: url("./assets/or-1.svg");
-                width: 19px;
-                height: 19px;
+                width: 9.5%;
+                height: 9.5%;
                 animation: Orbita1-ico 55s linear infinite;
-                top: -10px;
+                top: -4.75%;
                 transform: rotate(-45deg);
 
             }
@@ -133,10 +133,10 @@
 
         &__ring-2 {
             position: absolute;
-            top: 56px;
-            left: 56px;
-            width: calc(100% - 112px);
-            height: calc(100% - 112px);
+            top: 20%;
+            left: 20%;
+            width: calc(100% - 40%);
+            height: calc(100% - 40%);
             border-radius: 50%;
             border: 1px solid #5C7372;
             transform: rotate(-70deg);
@@ -146,10 +146,10 @@
                 position: absolute;
                 display: block;
                 content: url("./assets/or-2.svg");
-                width: 19px;
-                height: 19px;
+                width: 13.5%;
+                height: 13.5%;
 
-                top: -10px;
+                top: -6.75%;
                 transform: rotate(70deg);
 
                 animation: Orbita2-ico 35s linear infinite;
@@ -158,10 +158,10 @@
         }
         &__ring-3 {
             position: absolute;
-            top: 82px;
-            left: 82px;
-            width: calc(100% - 164px);
-            height: calc(100% - 164px);
+            top: 30%;
+            left: 30%;
+            width: calc(100% - 60%);
+            height: calc(100% - 60%);
             border-radius: 50%;
             border: 1px solid #5C7372;
 
@@ -172,10 +172,10 @@
                 position: absolute;
                 display: block;
                 content: url("./assets/or-3.svg");
-                width: 19px;
-                height: 19px;
+                width: 20%;
+                height: 20%;
                 animation: Orbita3-ico 55s linear infinite;
-                top: -10px;
+                top: -10%;
                 transform: rotate(180deg);
 
             }
@@ -183,20 +183,23 @@
 
         &__play {
             position: absolute;
-            top: 82px;
-            left: 82px;
-            width: calc(100% - 164px);
-            height: calc(100% - 164px);
+            top: 30%;
+            left: 30%;
+            width: calc(100% - 60%);
+            height: calc(100% - 60%);
             border-radius: 50%;
-
+            border: 1px solid transparent;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            a img{
-                height: 90px;
-                width: 90px;
+            img{
+                max-height: 90px;
+                max-width: 90px;
+
+                height: 70%;
+                width: 70%;
             }
         }
 
