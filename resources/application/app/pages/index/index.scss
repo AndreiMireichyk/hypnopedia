@@ -48,6 +48,12 @@
         width: auto;
     }
 
+    &__watch-video{
+        display: none;
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
     &__info {
         display: flex;
         flex-direction: column;
@@ -57,6 +63,7 @@
     &__app {
         min-width: 324px;
         max-width: 35%  ;
+        min-height: 652px;
         height: calc(100vh - 165px);
     }
 
@@ -272,6 +279,10 @@
 
         &__app {
             display: none;
+        }
+
+        &__watch-video{
+            display: block;
         }
     }
     //--Responsive
@@ -994,11 +1005,17 @@
         padding: 15px 40px;
     }
 }
+
 #video{
     .modal-dialog, iframe,.modal-content{
         max-width: 90vw;
         height: 90vh;
         background-color: transparent;
+
+    }
+    iframe{
+        position: relative;
+        z-index: 4;
     }
     .modal-dialog{
         margin: 5vh auto;
@@ -1009,6 +1026,7 @@
     .modal-close{
         display: block;
         position: absolute;
+        z-index: 5;
         top: 0;
         right: 0;
         padding: 10px;
