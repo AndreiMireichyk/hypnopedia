@@ -16,7 +16,8 @@
                 <div class="sc-1__info">
                     <h1 class="sc-1__title">A new way to enhance<br>your mental health<br>and motivation</h1>
                     <h2 class="sc-1__subtitle">Improve yourself while sleeping with affirmations</h2>
-                    <div class="sc-1__watch-video"><a class="btn" href="javascript:void(0)" data-toggle="modal" data-target="#video">Watch video</a></div><a class="sc-1__app-btn" href="https://itunes.apple.com/app/id1274009022" target="_blank"><img src="/images/app_store_cta.svg"></a>
+                    <div class="sc-1__watch-video">
+                        <a class="btn" href="javascript:void(0)" data-toggle="modal" data-target="#video">Watch video</a></div>
                     <a class="sc-1__app-btn" href="https://go.onelink.me/app/af8bdc55" target="_blank">
                         <img src="{{asset('/images/app_store_cta.svg')}}?{{env('VERSION')}}" alt="install app">
                     </a>
