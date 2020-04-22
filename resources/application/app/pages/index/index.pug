@@ -14,8 +14,18 @@ block content
                     a(href="https://itunes.apple.com/app/id1274009022" target="_blank").sc-1__app-btn
                         img(src=require('./assets/sc1/app_store_cta.svg'))
 
-                div.sc-1__app
+                div.sc-1__app.device
 
+                    div.device__phone
+                        img(src=require('./assets/X-phone-animation.png'))
+                        div.device__animation
+                            div.device__ring.device__ring-1 1
+                            div.device__ring.device__ring-2
+                            div.device__ring.device__ring-3
+                            div.device__ring.device__play
+                                a(href="javascript:void(0)" data-toggle="modal" data-target="#video")
+                                    img(src=require('./assets/play.svg'))
+                    div.device__watch
         section.sc-2#how_it_work
             div.sc-2__wrap
                 div.sc-2__title How it works?
@@ -60,41 +70,41 @@ block content
                         div.sc-3__feature-info
                             div.sc-3__feature-title HYPNOPEDIA
                             div.sc-3__feature-desc
-                                |Unique algorithms
+                                | Unique algorithms
                                 br
-                                |based on recent
+                                | based on recent
                                 br
-                                |sleep studies
+                                | sleep studies
                     div.sc-3__feature
                         img(src=require('./assets/sc3/2.png')).sc-3__feature-cover
                         div.sc-3__feature-info
                             div.sc-3__feature-title SMART-ALARM
                             div.sc-3__feature-desc
-                                |Built-in Smart Alarm
+                                | Built-in Smart Alarm
                                 br
-                                |wakes you at the most
+                                | wakes you at the most
                                 br
-                                |convenient moment
+                                | convenient moment
                                 br
-                                |of your sleep
+                                | of your sleep
                     div.sc-3__feature
                         img(src=require('./assets/sc3/3.png')).sc-3__feature-cover
                         div.sc-3__feature-info
                             div.sc-3__feature-title 360-DEGREE ASMR
                             div.sc-3__feature-desc
-                                |ASMR sounds with
+                                | ASMR sounds with
                                 br
-                                |3D effect for deep
+                                | 3D effect for deep
                                 br
-                                |relaxation and meditation
+                                | relaxation and meditation
                     div.sc-3__feature
                         img(src=require('./assets/sc3/4.png')).sc-3__feature-cover
                         div.sc-3__feature-info
                             div.sc-3__feature-title STATISTICS
                             div.sc-3__feature-desc
-                                |Your personal
+                                | Your personal
                                 br
-                                |summary data
+                                | summary data
                 div.sc-3__action
                     a(href="https://itunes.apple.com/app/id1274009022" target="_blank").btn Try for free
         section.sc-4#science
@@ -181,4 +191,8 @@ block content
                             div.sc-5__accordion-title How does Hypnopedia affect sleep?
                             i.icon-Polygon-1
                         div.sc-5__accordion-description Hypnopedia does not affect sleep in any way, but uses this time to enhance your mental health and motivation. The app adapts to individual biological characteristics and works in tune with your lifestyle.
-
+        div#video.modal(tabindex="-1" role="dialog")
+            div.modal-dialog
+                div.modal-content
+                    a(href="javascript:void(0)" data-dismiss="modal").modal-close &times;
+                    iframe(src="https://www.youtube.com/embed/YUp619eJObU?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)

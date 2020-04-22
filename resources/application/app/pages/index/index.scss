@@ -2,6 +2,10 @@
 @import "../../components/base/smartgrid";
 @import "../../components/laraberg/laraberg.css";
 @import "~accordion/src/accordion.css";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/modal";
 
 .sc-1 {
     display: flex;
@@ -51,11 +55,172 @@
     }
 
     &__app {
-        flex-grow: 1;
-        background-size: contain;
-        background-image: url('./assets/app.png');
-        background-position: right bottom;
-        background-repeat: no-repeat;
+        min-width: 324px;
+        max-width: 35%  ;
+        height: calc(100vh - 165px);
+    }
+
+    & .device {
+        position: relative;
+
+
+        &__phone {
+            height: 100%;
+            img{
+                max-width: none;
+                width: auto;
+                max-height: 100%;
+            }
+        }
+
+        &__watch {
+            position: relative;
+            top: -40%;
+            left: -60%;
+            height: 45%;
+            background-size: contain;
+            background-image: url('./assets/watch.png');
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+
+
+
+        &__animation {
+            position: absolute;
+            top: 25%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+        }
+
+        &__ring{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__ring-1 {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: calc(100% - 60px);
+            height: calc(100% - 60px);
+            border-radius: 50%;
+            border: 1px solid #5C7372;
+
+            transform: rotate(45deg);
+            animation: Orbita1 55s linear infinite;
+            &:after{
+                position: absolute;
+                display: block;
+                content: url("./assets/or-1.svg");
+                width: 19px;
+                height: 19px;
+                animation: Orbita1-ico 55s linear infinite;
+                top: -10px;
+                transform: rotate(-45deg);
+
+            }
+        }
+
+        &__ring-2 {
+            position: absolute;
+            top: 56px;
+            left: 56px;
+            width: calc(100% - 112px);
+            height: calc(100% - 112px);
+            border-radius: 50%;
+            border: 1px solid #5C7372;
+            transform: rotate(-70deg);
+            animation: Orbita2 35s linear infinite;
+
+            &:after{
+                position: absolute;
+                display: block;
+                content: url("./assets/or-2.svg");
+                width: 19px;
+                height: 19px;
+
+                top: -10px;
+                transform: rotate(70deg);
+
+                animation: Orbita2-ico 35s linear infinite;
+
+            }
+        }
+        &__ring-3 {
+            position: absolute;
+            top: 82px;
+            left: 82px;
+            width: calc(100% - 164px);
+            height: calc(100% - 164px);
+            border-radius: 50%;
+            border: 1px solid #5C7372;
+
+            transform: rotate(-180deg);
+            animation: Orbita3 55s linear infinite;
+
+            &:after{
+                position: absolute;
+                display: block;
+                content: url("./assets/or-3.svg");
+                width: 19px;
+                height: 19px;
+                animation: Orbita3-ico 55s linear infinite;
+                top: -10px;
+                transform: rotate(180deg);
+
+            }
+        }
+
+        &__play {
+            position: absolute;
+            top: 82px;
+            left: 82px;
+            width: calc(100% - 164px);
+            height: calc(100% - 164px);
+            border-radius: 50%;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a img{
+                height: 90px;
+                width: 90px;
+            }
+        }
+
+
+    }
+
+    @keyframes Orbita1 {
+        from { transform: rotate(45deg); }
+        to   { transform: rotate(-315deg); }
+    }
+    @keyframes Orbita1-ico {
+        from { transform: rotate(-45deg); }
+        to   { transform: rotate(315deg); }
+    }
+
+    @keyframes Orbita2 {
+        from { transform: rotate(-70deg); }
+        to   { transform: rotate(290deg); }
+    }
+    @keyframes Orbita2-ico {
+        from { transform: rotate(70deg); }
+        to   { transform: rotate(-290deg); }
+    }
+
+    @keyframes Orbita3 {
+        from { transform: rotate(-180deg); }
+        to   { transform: rotate(180deg); }
+    }
+    @keyframes Orbita3-ico {
+        from { transform: rotate(180deg); }
+        to   { transform: rotate(-180deg); }
     }
 
     //--Responsive
@@ -827,5 +992,29 @@
     @include sm-block {
         font-size: 22px;
         padding: 15px 40px;
+    }
+}
+#video{
+    .modal-dialog, iframe,.modal-content{
+        max-width: 90vw;
+        height: 90vh;
+        background-color: transparent;
+    }
+    .modal-dialog{
+        margin: 5vh auto;
+    }
+    .modal-content{
+        position: relative;
+    }
+    .modal-close{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        font-size: 40px;
+        line-height: 20px;
+        background: #fff;
+        border-radius: 0 0  0 16px   ;
     }
 }

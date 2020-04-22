@@ -20,7 +20,17 @@
                         <img src="{{asset('/images/app_store_cta.svg')}}?{{env('VERSION')}}" alt="install app">
                     </a>
                 </div>
-                <div class="sc-1__app"></div>
+                <div class="sc-1__app device">
+                    <div class="device__phone"><img src="/images/X-phone-animation.png">
+                        <div class="device__animation">
+                            <div class="device__ring device__ring-1">1</div>
+                            <div class="device__ring device__ring-2"></div>
+                            <div class="device__ring device__ring-3"></div>
+                            <div class="device__ring device__play"><a href="javascript:void(0)" data-toggle="modal" data-target="#video"><img src="/images/play.svg"></a></div>
+                        </div>
+                    </div>
+                    <div class="device__watch"></div>
+                </div>
             </div>
         </section>
         <section class="sc-2" id="how_it_work">
@@ -230,5 +240,12 @@
                 </div>
             </div>
         </section>
+        <div class="modal" id="video" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content"><a class="modal-close" href="javascript:void(0)" data-dismiss="modal">&times;</a>
+                    <iframe src="https://www.youtube.com/embed/YUp619eJObU?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </main>
 @endsection
