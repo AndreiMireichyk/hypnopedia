@@ -53,28 +53,26 @@
                 opacity: 0
             }
         }</style>
-    <link href="{{asset('/cpanel/style.css')}}" rel="stylesheet">
+
+    @section('css')
+        <link href="{{asset('/cpanel/style.css')}}" rel="stylesheet">
+    @show
+
 </head>
 <body class="app">
 <div id="loader">
     <div class="spinner"></div>
 </div>
-<script>window.addEventListener('load', function load() {
-        const loader = document.getElementById('loader');
-        setTimeout(function () {
-            loader.classList.add('fadeOut');
-        }, 300);
-    });</script>
 <div>
     <div class="sidebar">
         <div class="sidebar-inner">
             <div class="sidebar-logo">
                 <div class="peers ai-c fxw-nw">
                     <div class="peer peer-greed">
-                        <a class="sidebar-link td-n" href="index.html">
+                        <a class="sidebar-link td-n" href="{{route('cp.dashboard')}}">
                             <div class="peers ai-c fxw-nw">
                                 <div class="peer">
-                                    <div class="logo">
+                                    <div class="logo" style="visibility: hidden">
                                         <img src="/cpanel/assets/static/images/logo.png" alt="">
                                     </div>
                                 </div>
@@ -94,7 +92,7 @@
             <ul class="sidebar-menu scrollable pos-r">
 
                 <li class="nav-item mT-30 actived">
-                    <a class="sidebar-link" href="index.html">
+                    <a class="sidebar-link" href="{{route('cp.dashboard')}}">
                         <span class="icon-holder"><i class="c-blue-500 ti-home"></i> </span>
                         <span class="title">Главная</span>
                     </a>
@@ -110,13 +108,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="sidebar-link" href="blank.html">
+                            <a class="sidebar-link" href="{{route('cp.articles.index')}}">
                                 <i class="c-purple-500 ti-pencil-alt2"></i>
                                 Статьи
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-link" href="404.html">
+                            <a class="sidebar-link" href="{{route('cp.categories.index')}}">
                                 <i class="c-purple-500 ti-tag"></i>
                                 Категории
                             </a>
@@ -207,7 +205,18 @@
         </footer>
     </div>
 </div>
-<script type="text/javascript" src="{{asset('/cpanel/vendor.js')}}"></script>
-<script type="text/javascript" src="{{asset('/cpanel/bundle.js')}}"></script>
+@section('js')
+    <script>
+        window.addEventListener('load', function load() {
+            const loader = document.getElementById('loader');
+            setTimeout(function () {
+                loader.classList.add('fadeOut');
+            }, 300);
+        });
+    </script>
+    <script type="text/javascript" src="{{asset('/cpanel/vendor.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/cpanel/bundle.js')}}"></script>
+@show
+
 </body>
 </html>

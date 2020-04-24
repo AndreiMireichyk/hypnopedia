@@ -18,6 +18,9 @@ Route::get('/test', function () {
 })->name('home');
 Route::namespace('Cpanel')->prefix('cp')->name('cp.')->middleware('auth')->group(function () {
     Route::get('/', 'DashBoardController@index')->name('dashboard');
+    Route::resource('/articles', 'Blog\ArticleController');
+    Route::resource('/categories', 'Blog\ArticleCategoryController');
+    //Route::resource('/users', 'DashBoardController@index')->name('dashboard');
 });
 
 
