@@ -4,6 +4,12 @@
 @section('content')
     <div id="mainContent">
         <div class="container-fluid">
+            @if(Session::has('alert'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('alert')}}
+                </div>
+            @endif
+
             <div class="d-f jc-sb ai-c">
                 <h4 class="c-grey-900 mT-10 mB-30">Статьи</h4>
                 <a href="{{route('cp.articles.create')}}" class="btn cur-p btn-primary">Добавить статью</a>
@@ -15,36 +21,52 @@
                         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
+                                <th class="ta-c">Обложка</th>
                                 <th>Заголовок</th>
-                                <th>Автор</th>
-                                <th>Дата публикации</th>
-                                <th>Активна</th>
-                                <th>Просмотры</th>
+                                <th  class="ta-c">Категории</th>
+                                <th class="ta-c">Автор</th>
+                                <th class="ta-c">Активна</th>
+                                <th class="ta-c">Просмотры</th>
+                                <th class="ta-c">Дата публикации</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
+                                <th class="ta-c">Обложка</th>
                                 <th>Заголовок</th>
-                                <th>Автор</th>
-                                <th>Дата публикации</th>
-                                <th>Активна</th>
-                                <th>Просмотры</th>
+                                <th  class="ta-c">Категории</th>
+                                <th class="ta-c">Автор</th>
+                                <th class="ta-c">Активна</th>
+                                <th class="ta-c">Просмотры</th>
+                                <th class="ta-c">Дата публикации</th>
                                 <th></th>
                             </tr>
                             </tfoot>
                             <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25 asd</td>
-                                <td class="ta-r">
-                                    <a href="" class="btn btn-sm cur-p btn-primary">Изменить</a>
-                                    <a href="" class="btn btn-sm cur-p btn-danger">Удалить</a>
-                                </td>
-                            </tr>
+                            @foreach($articles as $article)
+                                <tr>
+                                    <td class="ta-c">
+                                        <img src="{{$article->cover_path}}" alt="" style="height: 64px; width: auto;">
+                                    </td>
+                                    <td><a href="{{route('blog.post', $article->slug)}}">{{$article->title}}</a></td>
+                                    <td  class="ta-c">{{$article->categories->implode('title', ', ')}}</td>
+                                    <td class="ta-c">{{$article->user->name}}</td>
+                                    <td class="ta-c">{{$article->is_active ? 'Да' : 'Нет'}}</td>
+                                    <td class="ta-c">0</td>
+                                    <td class="ta-c">{{$article->created_at->format("d-m-Y h:i")}}</td>
+                                    <td class="ta-r">
+                                        <a href="{{route('cp.articles.edit', $article->id)}}"
+                                           class="btn btn-sm cur-p btn-primary">Изменить</a>
+                                        {!! Form::open(['route' => ['cp.articles.destroy', $article->id], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
+                                            <button type="submit" class="btn btn-sm cur-p btn-danger">
+                                                Удалить
+                                            </button>
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+                            @endforeach
+
                             </tbody>
                         </table>
                     </div>

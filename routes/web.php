@@ -20,6 +20,8 @@ Route::namespace('Cpanel')->prefix('cp')->name('cp.')->middleware('auth')->group
     Route::get('/', 'DashBoardController@index')->name('dashboard');
     Route::resource('/articles', 'Blog\ArticleController');
     Route::resource('/categories', 'Blog\ArticleCategoryController');
+    Route::resource('/populars', 'Blog\ArticlePopularController');
+    Route::resource('/users', 'User\UserController');
     //Route::resource('/users', 'DashBoardController@index')->name('dashboard');
 });
 
@@ -27,3 +29,7 @@ Route::namespace('Cpanel')->prefix('cp')->name('cp.')->middleware('auth')->group
 Route::get('/', 'AppController@home')->name('home');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
 Route::post('/ph_subscribe', 'AppController@phSubscribe')->name('phSubscribe');
+
+
+Route::get('/blog/post/{slug}', function (){})->name('blog.post');
+Route::get('/blog/category/{slug}', function (){})->name('blog.category');

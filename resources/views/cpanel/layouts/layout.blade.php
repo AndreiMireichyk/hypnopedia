@@ -56,6 +56,7 @@
 
     @section('css')
         <link href="{{asset('/cpanel/style.css')}}" rel="stylesheet">
+        <link href="{{asset('/cpanel/custom.css')}}" rel="stylesheet">
     @show
 
 </head>
@@ -101,7 +102,7 @@
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="javascript:void(0);">
                         <span class="icon-holder">
-                            <i class="c-purple-500 ti-archive"></i>
+                            <i class="c-blue-500 ti-archive"></i>
                         </span>
                         <span class="title">Блог</span>
                         <span class="arrow"><i class="ti-angle-right"></i></span>
@@ -109,14 +110,20 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a class="sidebar-link" href="{{route('cp.articles.index')}}">
-                                <i class="c-purple-500 ti-pencil-alt2"></i>
+                                <i class="c-blue-500 ti-pencil-alt2"></i>
                                 Статьи
                             </a>
                         </li>
                         <li>
                             <a class="sidebar-link" href="{{route('cp.categories.index')}}">
-                                <i class="c-purple-500 ti-tag"></i>
+                                <i class="c-blue-500 ti-tag"></i>
                                 Категории
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar-link" href="{{route('cp.populars.index')}}">
+                                <i class="c-blue-500 ti-star"></i>
+                                Популярное
                             </a>
                         </li>
                     </ul>
@@ -125,16 +132,16 @@
                 <li class="nav-item">
                     <a class="sidebar-link" href="calendar.html">
                         <span class="icon-holder">
-                            <i class="c-deep-green-500 ti-calendar"></i>
+                            <i class="c-blue-500 ti-calendar"></i>
                         </span>
-                        <span class="title">Календарь</span>
+                        <span class="title">Рассылки</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="sidebar-link" href="calendar.html">
+                    <a class="sidebar-link" href="{{route('cp.users.index')}}">
                         <span class="icon-holder">
-                            <i class="c-deep-orange-500 ti-user"></i>
+                            <i class="c-blue-500 ti-user"></i>
                         </span>
                         <span class="title">Пользователи</span>
                     </a>
@@ -158,7 +165,7 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
                             <div class="peer mR-10">
-                                <img class="w-2r bdrs-50p"src="https://randomuser.me/api/portraits/men/11.jpg" alt="">
+                                <img class="w-2r bdrs-50p" src="{{ Auth::user()->avatar_path }}" alt="">
                             </div>
                             <div class="peer">
                                 <span class="fsz-sm c-grey-900">{{ Auth::user()->name }}</span>
@@ -166,17 +173,12 @@
                         </a>
                         <ul class="dropdown-menu fsz-sm">
                             <li>
-                                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                <a href="{{route('cp.users.edit', Auth::user()->id)}}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                                     <i class="ti-settings mR-10"></i>
                                     <span>Настройки</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                                    <i class="ti-user mR-10"></i>
-                                    <span>Профиль</span>
-                                </a>
-                            </li>
+
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"
@@ -186,7 +188,8 @@
                                     <i class="ti-power-off mR-10"></i>
                                     <span>Выйти</span>
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
                                     @csrf
                                 </form>
                             </li>
