@@ -31,5 +31,6 @@ Route::get('/contacts', 'AppController@contacts')->name('contacts');
 Route::post('/ph_subscribe', 'AppController@phSubscribe')->name('phSubscribe');
 
 
-Route::get('/blog/post/{slug}', function (){})->name('blog.post');
-Route::get('/blog/category/{slug}', function (){})->name('blog.category');
+Route::get('/blog', "BlogController@index")->name('blog');
+Route::get('/blog/article/{slug}', "BlogController@article")->name('blog.article');
+Route::get('/blog/category/{slug}', "BlogController@category")->name('blog.category');

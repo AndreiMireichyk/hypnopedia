@@ -2,88 +2,122 @@
 @import "../base/smartgrid";
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 
-  &__wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    padding: 0 25px;
-    margin: 32px auto;
-  }
-
-  &__logo img {
-    height: 39px;
-    width: auto;
-  }
-  &__toggle{
-    display: none;
-  }
-  &__toggle:after {
-    content: url("./assets/menu.svg");
-  }
-  &__toggle.open:after {
-    content: url("./assets/close.svg");
-  }
-
-  &__menu {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1;
-  }
-
-  .active &__menu-item {
-    color: $primary;
-  }
-  &__menu-item {
-    padding-left: 40px;
-    text-transform: uppercase;
-    color: $white;
-    transition: color .5s;
-
-    &:hover, &.active {
-      color: $primary;
+    &.light {
+        border-bottom: 1px solid rgb(232, 232, 232);
     }
-  }
 
-  @include lg-block {
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        padding: 0 25px;
+        margin: 32px auto;
+    }
+
+    &.light &__wrap {
+        margin: 19px auto;
+    }
+
+    &__logo img {
+        height: 39px;
+        width: auto;
+    }
+
+    &.light &__logo .normal {
+        display: none;
+    }
+
+    &:not(.light) &__logo .light {
+        display: none;
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+
+    &__toggle:after {
+
+        content: url("./assets/menu.svg");
+    }
+
+    &__toggle.open:after {
+
+        content: url("./assets/close.svg");
+    }
 
     &__menu {
-      display: none;
-      position: fixed;
-        z-index: 99;
-      top: 107px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #fff;
-      padding: 25px;
-      flex-direction: column;
-      height: calc(100vh - 107px);
-
-      &-item{
-        text-align: right;
-        display: block;
-        margin-bottom: 25px;
-
-
-        color: #24375F;
-      }
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-grow: 1;
     }
 
-    &__toggle{
-      display: block;
+    .active &__menu-item {
+        color: $primary;
     }
 
-    &__toggle.open + &__menu {
-      display: block;
+    &__menu-item {
+        padding-left: 40px;
+        text-transform: uppercase;
+        color: $white;
+        transition: color .5s;
+
+        &:hover, &.active {
+            color: $primary;
+        }
     }
-  }
+
+    &.light &__menu-item {
+        padding-left: 32px;
+        font-weight: 500;
+        color: rgb(34, 34, 34);
+
+        &:hover, &.active {
+            color: $primary;
+        }
+
+    }
+
+    @include lg-block {
+
+        &__menu {
+            display: none;
+            position: fixed;
+            z-index: 99;
+            top: 107px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            padding: 25px;
+            flex-direction: column;
+            height: calc(100vh - 107px);
+
+            &-item {
+                text-align: right;
+                display: block;
+                margin-bottom: 25px;
+
+
+                color: #24375F;
+            }
+        }
+
+        &__toggle {
+            display: block;
+        }
+
+        &__toggle.open + &__menu {
+            display: block;
+        }
+    }
 
 
 }

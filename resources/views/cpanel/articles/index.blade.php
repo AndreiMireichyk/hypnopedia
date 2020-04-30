@@ -39,7 +39,7 @@
                                 <th class="ta-c">Автор</th>
                                 <th class="ta-c">Активна</th>
                                 <th class="ta-c">Просмотры</th>
-                                <th class="ta-c">Дата публикации</th>
+                                <th class="ta-c whs-nw">Дата публикации</th>
                                 <th></th>
                             </tr>
                             </tfoot>
@@ -49,13 +49,13 @@
                                     <td class="ta-c">
                                         <img src="{{$article->cover_path}}" alt="" style="height: 64px; width: auto;">
                                     </td>
-                                    <td><a href="{{route('blog.post', $article->slug)}}">{{$article->title}}</a></td>
+                                    <td><a href="{{route('blog.article', $article->slug)}}">{{$article->title}}</a></td>
                                     <td  class="ta-c">{{$article->categories->implode('title', ', ')}}</td>
                                     <td class="ta-c">{{$article->user->name}}</td>
                                     <td class="ta-c">{{$article->is_active ? 'Да' : 'Нет'}}</td>
                                     <td class="ta-c">0</td>
                                     <td class="ta-c">{{$article->created_at->format("d-m-Y h:i")}}</td>
-                                    <td class="ta-r">
+                                    <td class="ta-r whs-nw">
                                         <a href="{{route('cp.articles.edit', $article->id)}}"
                                            class="btn btn-sm cur-p btn-primary">Изменить</a>
                                         {!! Form::open(['route' => ['cp.articles.destroy', $article->id], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}

@@ -14,17 +14,17 @@
     <link href="https://fonts.googleapis.com/css?family=Proza+Libre:400i&amp;display=swap&amp;subset=latin-ext"
           rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('/images/favicon.png')}}?{{env('VERSION')}}">
-    <title>Sleep and Learn with Hypnopedia</title>
-    <meta name="description"
-          content="Improve your mental health and change your life through motivating affirmations with Hypnopedia App.">
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('meta_desc')">
     <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
     @yield('css')
 </head>
 <body>
-<header class="header">
+<header class="header @yield('is_light')">
     <div class="header__wrap">
         <a class="header__logo" href="{{route('home')}}">
-            <img src="{{asset('/images/logo-v1.svg')}}?{{env('VERSION')}}" alt="logo">
+            <img class="normal" src="{{asset('/images/logo-v1.svg')}}?{{env('VERSION')}}" alt="logo">
+            <img class="light" src="{{asset('/images/logo-light.svg')}}?{{env('VERSION')}}" alt="logo">
         </a>
         <a class="header__toggle"></a>
         <div class="header__menu">
@@ -41,6 +41,17 @@
             <div><a class="header__menu-item" href="/#features" data-menu-spy>FEATURES</a></div>
             <div><a class="header__menu-item" href="/#science" data-menu-spy>SCIENCE</a></div>
             <div><a class="header__menu-item" href="/#faq" data-menu-spy>FAQ</a></div>
+
+            @if (in_array(Route::currentRouteName(), ['blog', 'blog.article', 'blog.category']))
+                <div class="active">
+                    <a class="header__menu-item active" href="{{route('blog')}}">Blog</a>
+                </div>
+            @else
+                <div>
+                    <a class="header__menu-item" href="{{route('blog')}}">Blog</a>
+                </div>
+            @endif
+
             @if (Route::currentRouteName() == 'contacts')
                 <div class="active">
                     <a class="header__menu-item" href="{{route('contacts')}}">Contact</a>

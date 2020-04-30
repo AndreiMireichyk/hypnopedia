@@ -50,7 +50,7 @@
                             @foreach($populars as $popular)
                                 <tr>
                                     <td class="ta-c"><a
-                                            href="{{route('blog.post', $popular->article->slug)}}">{{$popular->article->title}}</a>
+                                            href="{{route('blog.article', $popular->article->slug)}}">{{$popular->article->title}}</a>
                                     </td>
                                     <td class="ta-c">{{$popular->article->categories->implode('title', ', ')}}</td>
                                     <td  class="ta-c">0</td>

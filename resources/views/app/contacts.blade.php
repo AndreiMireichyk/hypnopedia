@@ -1,5 +1,9 @@
 @extends('app.layout.layout')
 
+@section('title', 'Sleep and Learn with Hypnopedia')
+
+@section('meta_desc', 'Improve your mental health and change your life through motivating affirmations with Hypnopedia App.')
+
 @section('css')
     <link href="{{asset('/css/contacts.css?v1')}}?{{env('VERSION')}}" rel="stylesheet">
 @endsection
