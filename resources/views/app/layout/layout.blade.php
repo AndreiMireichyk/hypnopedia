@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PH85TDP');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="https://fonts.googleapis.com/css?family=Proza+Libre:400i&amp;display=swap&amp;subset=latin-ext"
-          rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('/images/favicon.png')}}?{{env('VERSION')}}">
     <title>@yield('title')</title>
+
     <meta name="description" content="@yield('meta_desc')">
-    <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
-    @yield('css')
+    <meta name="keywords" content="@yield('meta_keys')">
+    <meta property="og:title" content="@yield('og-title')"/>
+    <meta property="og:description" content="@yield('og-desc')"/>
+    <meta property="og:url" content="@yield('og-url')"/>
+    <meta property="og:image" content="@yield('og-img')"/>
+
+    @section('css')
+        <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
+    @show
 </head>
 <body>
 <header class="header @yield('is_light')">
@@ -84,11 +82,9 @@
     </div>
 </footer>
 <div id="widget"></div>
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH85TDP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<script type="text/javascript" src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
-@yield('js')
+@include('app.layout.metrics')
+@section('js')
+    <script type="text/javascript" src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
+@show
 </body>
 </html>

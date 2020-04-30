@@ -1,16 +1,20 @@
 @extends('app.layout.layout')
 
-@section('title', 'Blog')
+@section('title', $category->meta_title)
 
-@section('meta_desc', '')
+@section('meta_keys', $category->meta_keys)
+
+@section('meta_desc', $category->meta_desc)
 
 @section('is_light', 'light')
 
 @section('css')
+    @parent
     <link href="{{asset('/css/blog.css')}}?{{env('VERSION')}}" rel="stylesheet">
 @endsection
 
 @section('js')
+    @parent
     <script type="text/javascript" src="{{asset('/js/blog.bundle.js')}}?{{env('VERSION')}}"></script>
 @endsection
 

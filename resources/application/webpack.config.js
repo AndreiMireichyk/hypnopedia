@@ -28,6 +28,7 @@ const common = {
         'index': PATH.src + '/pages/index/index.js',
         'contacts': PATH.src + '/pages/contacts/contacts.js',
         'blog': PATH.src + '/pages/blog/blog.js',
+        'article': PATH.src + '/pages/article/article.js',
     },
 
     output: {
@@ -55,6 +56,11 @@ const common = {
             filename: 'blog.html',
             chunks: ['blog', 'common'],
             template: PATH.src + '/pages/blog/blog.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'article.html',
+            chunks: ['article', 'common'],
+            template: PATH.src + '/pages/article/article.pug'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',

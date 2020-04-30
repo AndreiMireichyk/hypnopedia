@@ -1,0 +1,292 @@
+@import "../../components/base/vars";
+@import "../../components/base/smartgrid";
+@import "./content_mixin";
+
+.article {
+    max-width: 1076px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 112px 0 50px;
+    margin: 0 auto 200px auto;
+
+
+    &__cover {
+        flex-basis: 100%;
+        flex-grow: 3;
+
+        position: relative;
+        height: 400px;
+        padding: 30px;
+        margin: 0 auto 30px auto;
+
+        background: url("https://kryptomoney.com/wp-content/uploads/2018/03/KryptoMoney.com-Blockchain-Technology-Is-Not-Just-about-Cryptocurrencies.jpg") no-repeat center;
+        background-size: cover;
+
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        &:before {
+            content: "";
+            display: block;
+
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+
+        max-width: 770px;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 50px;
+        color: $white;
+    }
+
+    &__socials {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__main {
+        flex-basis: 694px;
+        flex-grow: 2;
+        padding: 0 40px;
+    }
+
+    &__aside {
+    }
+
+    &__content {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e7e7e7;
+
+        color: rgb(34, 34, 34);
+
+        @include content;
+
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-bottom: 30px;
+    }
+
+    &__published {
+        font-size: 14px;
+        color: rgb(34, 34, 34);
+        opacity: 0.5;
+    }
+
+
+    .socials {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 52px;
+            height: 32px;
+
+            margin-left: 25px;
+            border-radius: 4.5px;
+
+            &:first-child{
+                margin-left: 0;
+            }
+
+            &.fb, &.vk, &.in {
+                border: 1px solid hsla(0, 0%, 100%, .8);
+
+                &:before {
+                    font-family: icomoon, serif;
+                    color: hsla(0, 0%, 100%, .8);;
+                }
+            }
+
+            &.fb-c, &.vk-c, &.in-c {
+                &:before {
+                    font-family: icomoon, serif;
+                    color: $white;
+                }
+            }
+
+            &.fb-c {
+                background-color: #4a66ad;
+            }
+
+            &.vk-c {
+                background-color: #5475a4;
+            }
+
+            &.in-c {
+                background-color: #0077b5;
+            }
+
+            &.fb:before, &.fb-c:before {
+                content: "\e90e";
+            }
+
+            &.vk:before, &.vk-c:before {
+                font-size: 12px;
+                content: "\e90f";
+            }
+
+            &.in:before, &.in-c:before {
+                content: "\e90d";
+            }
+        }
+    }
+
+    .categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        &__item {
+            display: block;
+            font-size: 11px;
+            padding: 5px 15px;
+            border-radius: 2px;
+            background-color: #f7f7fa;
+            margin-right: 16px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            transition: all .3s;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .collection {
+        max-width: 282px;
+        padding: 15px;
+        margin-bottom: 12px;
+        background-color: #f7f7fa;
+        box-sizing: border-box;
+
+        &__title {
+            font-weight: bold;
+            font-size: 18px;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgb(235, 235, 235);
+
+            &:after {
+                display: block;
+                content: "";
+                width: 50px;
+                border-bottom: 2px solid rgb(86, 191, 189);
+                position: relative;
+                top: 5px;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__num {
+            font-size: 24px;
+            line-height: 1;
+            font-weight: 500;
+            color: rgba(47, 47, 47, 0.35);
+            padding-right: 25px;
+
+            position: relative;
+            top: 2px;
+        }
+
+        &__article {
+            font-weight: 600;
+            font-size: 14px;
+            color: rgba(34, 34, 34, .8);
+            line-height: 1;
+            transition: all .3s;
+
+            &:hover {
+                color: rgb(86, 191, 189);
+            }
+        }
+
+        &__category {
+            display: block;
+            text-transform: uppercase;
+            font-size: 10px;
+            color: rgba(34, 34, 34, .6);
+            transition: all .3s;
+
+            &:hover {
+                color: rgb(86, 191, 189);
+            }
+
+        }
+    }
+
+    @include lg-block {
+
+        padding: 82px 0 50px;
+
+        &__main{
+            padding: 0 25px;
+        }
+        &__aside {
+            display: none;
+        }
+    }
+
+    @include sm-block {
+
+        &__title{
+            margin-bottom: 30px;
+        }
+
+        &__cover {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+
+        &__group{
+            flex-direction: column;
+        }
+
+        &__published{
+            margin-bottom: 30px;
+        }
+
+        .categories{
+            justify-content: center;
+        }
+    }
+}

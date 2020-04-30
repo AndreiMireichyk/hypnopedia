@@ -31,8 +31,14 @@ class BlogController extends Controller
         ]);
     }
 
-    public function article()
+    public function article($slug)
     {
+        $article = Article::where('slug', $slug)->where('is_active', true)->firstOrFail();
+        $lastFiveArticles = Article::with('categories')->where('is_active', true)->orderBy('id')->take(5)->get();
 
+        return view('app.blog.article', [
+            'article'=>$article,
+            'lastFiveArticles'=>$lastFiveArticles,
+        ]);
     }
 }

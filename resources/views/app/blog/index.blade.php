@@ -7,19 +7,17 @@
 @section('is_light', 'light')
 
 @section('css')
+    @parent
     <link href="{{asset('/css/blog.css')}}?{{env('VERSION')}}" rel="stylesheet">
 @endsection
 
 @section('js')
+    @parent
     <script type="text/javascript" src="{{asset('/js/blog.bundle.js')}}?{{env('VERSION')}}"></script>
 @endsection
 
 @section('content')
     <main class="blog">
-        {{--        <section class="blog__category category">
-                    <h1 class="category__title">Mental health</h1>
-                    <p class="category__desc">Mental health</p>
-                </section>--}}
         @if($categories->isNotEmpty() && $articles->currentPage() === 1)
             <section class="blog__categories categories">
 

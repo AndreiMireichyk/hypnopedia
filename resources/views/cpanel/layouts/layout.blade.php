@@ -73,8 +73,8 @@
                         <a class="sidebar-link td-n" href="{{route('cp.dashboard')}}">
                             <div class="peers ai-c fxw-nw">
                                 <div class="peer">
-                                    <div class="logo" style="visibility: hidden">
-                                        <img src="/cpanel/assets/static/images/logo.png" alt="">
+                                    <div class="logo d-f ai-c jc-c" style="display: flex">
+                                        <img src="/cpanel/assets/static/images/logo-white.png" alt="" style="width: 50px; height: 50px">
                                     </div>
                                 </div>
                                 <div class="peer peer-greed">
