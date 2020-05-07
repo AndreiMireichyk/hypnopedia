@@ -31,9 +31,12 @@
         <section class="article__cover" style="background-image: url({{asset($article->cover_path)}})">
             <h1 class="article__title">{{$article->title}}</h1>
             <div class="article__socials socials">
-                <a class="socials__item fb" href="javascript:void(0)" onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
-                <a class="socials__item vk" href="javascript:void(0)" onclick="window.share.vkontakte('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
-                <a class="socials__item in" href="javascript:void(0)" onclick="window.share.linkedin('{{url()->current()}}','{{$article->title}}')"></a>
+                <a class="socials__item fb" href="javascript:void(0)"
+                   onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
+                <a class="socials__item vk" href="javascript:void(0)"
+                   onclick="window.share.vkontakte('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
+                <a class="socials__item in" href="javascript:void(0)"
+                   onclick="window.share.linkedin('{{url()->current()}}','{{$article->title}}')"></a>
             </div>
         </section>
         <section class="article__main">
@@ -43,9 +46,12 @@
             <div class="article__group">
                 <div class="article__published">Publication date: {{$article->created_at->diffForHumans()}}</div>
                 <div class="article__socials socials">
-                    <a class="socials__item fb-c" href="javascript:void(0)" onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
-                    <a class="socials__item vk-c" href="javascript:void(0)" onclick="window.share.vkontakte('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
-                    <a class="socials__item in-c" href="javascript:void(0)" onclick="window.share.linkedin('{{url()->current()}}','{{$article->title}}')"></a>
+                    <a class="socials__item fb-c" href="javascript:void(0)"
+                       onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
+                    <a class="socials__item vk-c" href="javascript:void(0)"
+                       onclick="window.share.vkontakte('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
+                    <a class="socials__item in-c" href="javascript:void(0)"
+                       onclick="window.share.linkedin('{{url()->current()}}','{{$article->title}}')"></a>
                 </div>
             </div>
             <div class="article__categories categories">
@@ -57,21 +63,25 @@
             </div>
         </section>
         <section class="article__aside">
-            <div class="collection">
-                <div class="collection__title">Latest news</div>
-                <div class="collection__list">
-                    @foreach($lastFiveArticles as $key=>$article)
-                        <div class="collection__item">
-                            <div class="collection__num">{{$key+1}}</div>
-                            <div class="collection__info">
-                                <a class="collection__article" href="{{route('blog.article',$article->slug)}}">{{$article->title}}</a>
-                                <a class="collection__category" href="{{route('blog.category', $article->categories->first()->slug)}}">{{$article->categories->first()->title}}</a>
+            @if($lastFiveArticles->isNotEmpty())
+                <div class="collection">
+                    <div class="collection__title">Latest news</div>
+                    <div class="collection__list">
+                        @foreach($lastFiveArticles as $key=>$article)
+                            <div class="collection__item">
+                                <div class="collection__num">{{$key+1}}</div>
+                                <div class="collection__info">
+                                    <a class="collection__article"
+                                       href="{{route('blog.article',$article->slug)}}">{{$article->title}}</a>
+                                    <a class="collection__category"
+                                       href="{{route('blog.category', $article->categories->first()->slug)}}">{{$article->categories->first()->title}}</a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-            <div class="collection">
+            @endif
+            {{--<div class="collection">
                 <div class="collection__title">Related materials:</div>
                 <div class="collection__list">
                     <div class="collection__item">
@@ -81,7 +91,7 @@
                                 class="collection__category">BiXBiT</a></div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </section>
     </main>
 @endsection
