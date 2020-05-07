@@ -23,7 +23,7 @@
                             <tr>
                                 <th class="ta-c">Обложка</th>
                                 <th>Заголовок</th>
-                                <th  class="ta-c">Категории</th>
+                                <th  class="ta-c">Тэги</th>
                                 <th class="ta-c">Автор</th>
                                 <th class="ta-c">Активна</th>
                                 <th class="ta-c">Просмотры</th>
@@ -35,7 +35,7 @@
                             <tr>
                                 <th class="ta-c">Обложка</th>
                                 <th>Заголовок</th>
-                                <th  class="ta-c">Категории</th>
+                                <th  class="ta-c">Тэги</th>
                                 <th class="ta-c">Автор</th>
                                 <th class="ta-c">Активна</th>
                                 <th class="ta-c">Просмотры</th>

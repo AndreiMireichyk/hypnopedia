@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="exampleInputEmail1" class="col-sm-4 col-form-label">Категории</label>
+                                <label for="exampleInputEmail1" class="col-sm-4 col-form-label">Тэги</label>
                                 <div class="col-sm-8">
                                     {!! Form::select('categories[]',$categories, old('categories', $article->categories->pluck('id')), ['class' => 'js-select-tags', 'id'=>'categories', 'multiple'=>'multiple']); !!}
 

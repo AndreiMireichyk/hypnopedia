@@ -35,7 +35,7 @@
 
             {!! Form::open(['route' => ['cp.categories.update', $category->id], 'method' => 'put']) !!}
             <div class="d-f jc-sb ai-c">
-                <h4 class="c-grey-900 mT-10 mB-30">Изменение категории</h4>
+                <h4 class="c-grey-900 mT-10 mB-30">Изменение тэга</h4>
                 <div>
                     <button type="submit" class="btn cur-p btn-primary">Сохранить</button>
                     <a href="{{route('cp.categories.index')}}" class="btn cur-p btn-outline-primary">Назад</a>
@@ -95,7 +95,7 @@
                 </div>
                 <div class=" col-md-12">
                     <div class="bgc-white h-100p p-20 bd">
-                        <h5 class="c-grey-900">Описание категории</h5>
+                        <h5 class="c-grey-900">Описание тэга</h5>
                         <div class="mT-30">
                             <div class="form-group">
                                 {!! Form::textarea('lb_content', old('lb_content', $category->lb_raw_content), ['class' => 'form-control', 'id'=>'lb_content']); !!}

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
+    protected $fill = ['title', 'is_active', 'meta_title', 'meta_keys', 'meta_desc', 'announcement', 'cover_path', 'lb_content', 'user_id'];
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +48,7 @@ class ArticleController extends Controller
 
         $request->merge(['user_id' => Auth::user()->id]);
 
-        $article->fill($request->except(['categories']))->save();
+        $article->fill($request->only($this->fill))->save();
 
         $article->categories()->sync($request->get('categories'));
 
@@ -78,7 +79,7 @@ class ArticleController extends Controller
      */
     public function update(ArticleRequest $request, Article $article)
     {
-        $article->fill($request->except(['categories']))->save();
+        $article->fill($request->only($this->fill))->save();
 
         $article->categories()->sync($request->get('categories'));
 

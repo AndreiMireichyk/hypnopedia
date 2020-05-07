@@ -11,8 +11,8 @@
             @endif
 
             <div class="d-f jc-sb ai-c">
-                <h4 class="c-grey-900 mT-10 mB-30">Категории</h4>
-                <a href="{{route('cp.categories.create')}}" class="btn cur-p btn-primary">Добавить категорию</a>
+                <h4 class="c-grey-900 mT-10 mB-30">Тэги</h4>
+                <a href="{{route('cp.categories.create')}}" class="btn cur-p btn-primary">Добавить тэг</a>
             </div>
 
             <div class="row">
@@ -22,14 +22,14 @@
                             <thead>
                             <tr>
                                 <th>Название</th>
-                                <th>Статей в категории</th>
+                                <th>Статей с тэгом</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
                                 <th>Название</th>
-                                <th>Статей в категории</th>
+                                <th>Статей с тэгом</th>
                                 <th></th>
                             </tr>
                             </tfoot>

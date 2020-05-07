@@ -33,7 +33,7 @@
                             <thead>
                             <tr>
                                 <th class="ta-c">Название</th>
-                                <th class="ta-c">Категории</th>
+                                <th class="ta-c">Тэги</th>
                                 <th class="ta-c">Просмотры</th>
                                 <th></th>
                             </tr>
@@ -41,7 +41,7 @@
                             <tfoot>
                             <tr>
                                 <th class="ta-c">Название</th>
-                                <th class="ta-c">Категории</th>
+                                <th class="ta-c">Тэги</th>
                                 <th class="ta-c">Просмотры</th>
                                 <th></th>
                             </tr>

@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 
 class ArticleCategoryController extends Controller
 {
+
+    protected $fill = ['title', 'slug', 'meta_title', 'meta_keys', 'meta_desc', 'lb_content'];
     /**
      * Display a listing of the resource.
      *
@@ -40,8 +42,8 @@ class ArticleCategoryController extends Controller
     public function store(ArticleCategoryRequest $request)
     {
         $category = new ArticleCategory();
-        $category->fill($request->all())->save();
-        return redirect()->route('cp.categories.index')->with('alert', 'Категория добавлена');
+        $category->fill($request->only($this->fill))->save();
+        return redirect()->route('cp.categories.index')->with('alert', 'Тэг добавлен');
     }
 
 
@@ -65,8 +67,8 @@ class ArticleCategoryController extends Controller
      */
     public function update(ArticleCategoryRequest $request, ArticleCategory $category)
     {
-        $category->fill($request->all())->save();
-        return redirect()->route('cp.categories.index')->with('alert', 'Категория изменена');
+        $category->fill($request->only($this->fill))->save();
+        return redirect()->route('cp.categories.index')->with('alert', 'Тэг изменен');
     }
 
     /**
@@ -79,6 +81,6 @@ class ArticleCategoryController extends Controller
     public function destroy(ArticleCategory $category)
     {
         $category->delete();
-        return redirect()->route('cp.categories.index')->with('alert', 'Категория удалена');
+        return redirect()->route('cp.categories.index')->with('alert', 'Тэг удален');
     }
 }

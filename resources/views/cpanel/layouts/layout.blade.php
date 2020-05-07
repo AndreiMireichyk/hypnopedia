@@ -117,7 +117,7 @@
                         <li>
                             <a class="sidebar-link" href="{{route('cp.categories.index')}}">
                                 <i class="c-blue-500 ti-tag"></i>
-                                Категории
+                                Тэги
                             </a>
                         </li>
                         <li>
