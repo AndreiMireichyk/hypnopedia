@@ -39,7 +39,7 @@ class ArticlePopularController extends Controller
     {
         $popular = new ArticlePopular();
 
-        $popular->fill($request->get('article_id'))->save();
+        $popular->fill($request->all('article_id'))->save();
 
         return redirect()->route('cp.populars.index')->with('alert', 'Статья добавлена в популярные');
     }

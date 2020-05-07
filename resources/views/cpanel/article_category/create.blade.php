@@ -48,7 +48,7 @@
                         <h5 class="c-grey-900">Основное</h5>
                         <div class="mT-30">
                             <div class="form-group row">
-                                {!! Form::label('title', 'Заголовок статьи', ['class' => 'col-sm-4 col-form-label']) !!}
+                                {!! Form::label('title', 'Заголовок тэга', ['class' => 'col-sm-4 col-form-label']) !!}
                                 <div class="col-sm-8">
                                     {!! Form::text('title', old('title'), ['class' => 'form-control', 'id'=>'title', 'placeholder'=>'Заголовок статьи']); !!}
                                     @include('cpanel.layouts.form_errors', ['errors'=>$errors->get('title')])
