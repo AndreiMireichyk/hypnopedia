@@ -13,7 +13,7 @@ class BlogController extends Controller
     {
 
         return view('app.blog.index', [
-            'articles' => Article::with('categories')->where('is_active', true)->orderBy('id')->paginate(6),
+            'articles' => Article::with('categories')->where('is_active', true)->orderBy('id','desc')->paginate(6),
             'categories' => ArticleCategory::with('articles')->orderBy('id')->get(),
             'populars' => ArticlePopular::with('article')->orderBy('id')->get(),
         ]);
