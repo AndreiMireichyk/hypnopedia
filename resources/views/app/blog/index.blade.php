@@ -26,7 +26,7 @@
                         @if ($category->articles->isEmpty())
                             @continue
                         @endif
-                        <a class="categories__tab {{$key === 0 ? 'active' : ''}}" data-toggle="tab"
+                        <a class="categories__tab {{$categories->first()->id === $category->id ? 'active' : ''}}" data-toggle="tab"
                            href="#cat-{{$category->id}}">{{$category->title}}</a>
                     @endforeach
                 </div>
@@ -38,7 +38,7 @@
                             @continue
                         @endif
 
-                        <div class="categories__articles top-article tab-pane {{$key === 0 ? 'active' : ''}}"
+                        <div class="categories__articles top-article tab-pane {{$categories->first()->id === $category->id ? 'active' : ''}}"
                              id="cat-{{$category->id}}" role="tabpanel">
 
                             @foreach ($category->articles->take(1) as $article)
