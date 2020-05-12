@@ -115,7 +115,7 @@
                 margin-left: 0;
             }
 
-            &.fb, &.vk, &.in {
+            &.fb, &.vk, &.tw, &.in {
                 border: 1px solid hsla(0, 0%, 100%, .8);
 
                 &:before {
@@ -124,7 +124,7 @@
                 }
             }
 
-            &.fb-c, &.vk-c, &.in-c {
+            &.fb-c, &.vk-c, &.tw-c, &.in-c {
                 &:before {
                     font-family: icomoon, serif;
                     color: $white;
@@ -138,6 +138,9 @@
             &.vk-c {
                 background-color: #5475a4;
             }
+            &.tw-c {
+                background-color: #00acee;
+            }
 
             &.in-c {
                 background-color: #0077b5;
@@ -150,6 +153,10 @@
             &.vk:before, &.vk-c:before {
                 font-size: 12px;
                 content: "\e90f";
+            }
+
+            &.tw:before, &.tw-c:before {
+                content: "\e902";
             }
 
             &.in:before, &.in-c:before {

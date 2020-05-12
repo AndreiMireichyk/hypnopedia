@@ -33,8 +33,8 @@
             <div class="article__socials socials">
                 <a class="socials__item fb" href="javascript:void(0)"
                    onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
-                <a class="socials__item vk" href="javascript:void(0)"
-                   onclick="window.share.vkontakte('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
+                <a class="socials__item tw" href="javascript:void(0)"
+                   onclick="window.share.twitter('{{url()->current()}}','{{$article->title}}')"></a>
                 <a class="socials__item in" href="javascript:void(0)"
                    onclick="window.share.linkedin('{{url()->current()}}','{{$article->title}}')"></a>
             </div>
@@ -48,8 +48,8 @@
                 <div class="article__socials socials">
                     <a class="socials__item fb-c" href="javascript:void(0)"
                        onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
-                    <a class="socials__item vk-c" href="javascript:void(0)"
-                       onclick="window.share.vkontakte('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
+                    <a class="socials__item tw-c" href="javascript:void(0)"
+                       onclick="window.share.twitter('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}')"></a>
                     <a class="socials__item in-c" href="javascript:void(0)"
                        onclick="window.share.linkedin('{{url()->current()}}','{{$article->title}}')"></a>
                 </div>

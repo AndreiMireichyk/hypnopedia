@@ -42,14 +42,19 @@
     }
 
 
-    &__toggle:after {
+    &.light &__toggle:after {
+        color: $primary !important;
+    }
 
-        content: url("./assets/menu.svg");
+    &__toggle:after {
+        font-family: icomoon, serif;
+        content: "\e901";
+        font-size: 26px;
+        color: $white;
     }
 
     &__toggle.open:after {
-
-        content: url("./assets/close.svg");
+        content: "\e900";
     }
 
     &__menu {
@@ -108,6 +113,11 @@
 
                 color: #24375F;
             }
+        }
+
+        &.light &__menu{
+            top: 82px;
+            height: calc(100vh - 82px);
         }
 
         &__toggle {

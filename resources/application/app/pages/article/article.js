@@ -43,12 +43,8 @@ window.share = {
         this.popup(url)
     },
     linkedin: function(purl, ptitle) {
-        let url  = 'https://www.linkedin.com/shareArticle?';
-        url += 'mini='          + 'true';
-        url += 'url='          + encodeURIComponent(purl);
-        url += '&title='       + encodeURIComponent(ptitle);
-        url += '&summary=' + encodeURIComponent(ptitle);
-        url += '&source='    + 'BiXBiT';
+        let url  = 'https://www.linkedin.com/sharing/share-offsite/?';
+        url += 'url='          + purl
         this.popup(url)
     },
 
