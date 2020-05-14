@@ -1,3 +1,12 @@
 .select2{
     min-width: 100%;
 }
+.appstore-btn{
+    display: inline-block;
+    margin: 0 auto;
+}
+.appstore-btn:before{
+
+    font-family: icomoon, serif;
+    content: "\e903";
+}
