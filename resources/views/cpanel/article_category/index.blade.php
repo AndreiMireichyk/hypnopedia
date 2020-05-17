@@ -21,6 +21,7 @@
                         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Название</th>
                                 <th>Статей с тэгом</th>
                                 <th></th>
@@ -28,6 +29,7 @@
                             </thead>
                             <tfoot>
                             <tr>
+                                <th>ID</th>
                                 <th>Название</th>
                                 <th>Статей с тэгом</th>
                                 <th></th>
@@ -36,6 +38,7 @@
                             <tbody>
                             @foreach($categories as $category)
                                 <tr>
+                                    <td>{{$category->id}}</td>
                                     <td><a href="{{route('blog.category', $category->slug)}}">{{$category->title}}</a></td>
                                     <td>{{$category->articles()->count()}}</td>
                                     <td class="ta-r">

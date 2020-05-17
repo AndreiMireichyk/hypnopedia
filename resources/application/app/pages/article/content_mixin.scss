@@ -5,7 +5,9 @@
         display: block;
         margin: 0 auto;
     }
-
+    a {
+        color: $primary;
+    }
     strong {
         font-weight: 500;
     }
