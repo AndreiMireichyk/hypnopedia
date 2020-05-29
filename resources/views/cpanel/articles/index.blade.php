@@ -21,7 +21,8 @@
                         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th class="ta-c">Обложка</th>
+                                <th class="ta-c">ID</th>
+                                <th class="ta-c"  data-sort="desc">Обложка</th>
                                 <th>Заголовок</th>
                                 <th  class="ta-c">Тэги</th>
                                 <th class="ta-c">Автор</th>
@@ -33,6 +34,7 @@
                             </thead>
                             <tfoot>
                             <tr>
+                                <th class="ta-c">ID</th>
                                 <th class="ta-c">Обложка</th>
                                 <th>Заголовок</th>
                                 <th  class="ta-c">Тэги</th>
@@ -47,6 +49,9 @@
                             @foreach($articles as $article)
                                 <tr>
                                     <td class="ta-c">
+                                        {{$article->id}}
+                                    </td>
+                                    <td class="ta-c">
                                         <img src="{{$article->cover_path}}" alt="" style="height: 64px; width: auto;">
                                     </td>
                                     <td><a href="{{route('blog.article', $article->slug)}}">{{$article->title}}</a></td>
@@ -54,7 +59,7 @@
                                     <td class="ta-c">{{$article->user->name}}</td>
                                     <td class="ta-c">{{$article->is_active ? 'Да' : 'Нет'}}</td>
                                     <td class="ta-c">0</td>
-                                    <td class="ta-c">{{$article->created_at->format("d-m-Y h:i")}}</td>
+                                    <td class="ta-c" data-order="{{$article->id}}">{{$article->created_at->format("d-m-Y H:i")}}</td>
                                     <td class="ta-r whs-nw">
                                         <a href="{{route('cp.articles.edit', $article->id)}}"
                                            class="btn btn-sm cur-p btn-primary">Изменить</a>
