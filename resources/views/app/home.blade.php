@@ -35,8 +35,7 @@
                             <div class="device__ring device__ring-1">1</div>
                             <div class="device__ring device__ring-2"></div>
                             <div class="device__ring device__ring-3"></div>
-                            <a class="device__ring device__play" href="javascript:void(0)" data-toggle="modal"
-                               data-target="#video"><img src="/images/play.svg"></a>
+                            <div class="device__ring device__ring-3"></div><a class="device__ring device__play" href="javascript:void(0)" data-toggle="modal" data-target="#video"><img class="play" src="/images/play-2.svg"><img class="watch" src="/images/WATCH.svg"><img class="video" src="/images/VIDEO.svg"></a>
                         </div>
                     </div>
                     <div class="device__watch"></div>
@@ -45,7 +44,9 @@
         </section>
         <section class="sc-2" id="how_it_work">
             <div class="sc-2__wrap">
-                <div class="sc-2__title">How it works?</div>
+                <div class="sc-2__title">How it works?
+                    <div class="sc-2__title-img"><img src="/images/health.svg"></div>
+                </div>
                 <p class="sc-2__desc">
                     Recent somnology studies confirm that a person is able to perceive information in
                     certain sleep phases to infix existing knowledge. <a class="sc-2__post-link" target="_blank"

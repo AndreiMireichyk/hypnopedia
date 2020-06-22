@@ -26,11 +26,15 @@ block content
                             div.device__ring.device__ring-2
                             div.device__ring.device__ring-3
                             a(href="javascript:void(0)" data-toggle="modal" data-target="#video").device__ring.device__play
-                                    img(src=require('./assets/play.svg'))
+                                    img.play(src=require('./assets/play-2.svg'))
+                                    img.watch(src=require('./assets/WATCH.svg'))
+                                    img.video(src=require('./assets/VIDEO.svg'))
                     div.device__watch
         section.sc-2#how_it_work
             div.sc-2__wrap
                 div.sc-2__title How it works?
+                    div.sc-2__title-img
+                        img(src=require('./assets/sc2/health.svg'))
                 p.sc-2__desc Recent somnology studies confirm that a person is able to perceive information in certain sleep phases to infix existing knowledge. Based on these studies, we have created an algorithm that will help you improve your mental health and increase motivation. Hypnopedia uses Apple Watch sensors to determine the correct phase of sleep for playing affirmations. After a productive sleep the smart alarm clock will wake you up at the most convenient time before the set wake-up time
                 p.sc-2__action
                     a(href="https://itunes.apple.com/app/id1274009022" target="_blank").btn Try for free
