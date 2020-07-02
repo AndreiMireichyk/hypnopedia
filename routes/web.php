@@ -29,8 +29,10 @@ Route::namespace('Cpanel')->prefix('cp')->name('cp.')->middleware('auth')->group
 Route::get('/', 'AppController@home')->name('home');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
 Route::post('/ph_subscribe', 'AppController@phSubscribe')->name('phSubscribe');
+Route::get('/sitemap.xml', 'AppController@sitemap')->name('sitemap');
 
 
 Route::get('/blog', "BlogController@index")->name('blog');
 Route::get('/blog/article/{slug}', "BlogController@article")->name('blog.article');
 Route::get('/blog/category/{slug}', "BlogController@category")->name('blog.category');
+

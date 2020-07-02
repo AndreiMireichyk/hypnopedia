@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactsRequest;
 use App\Mail\Contacts;
 use App\Mail\PlanFix;
+use App\Models\Blog\Article;
+use App\Models\Blog\ArticleCategory;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -52,5 +54,16 @@ class AppController extends Controller
         ]);
 
         return response()->json(['message'=>'subscribed'], $response->getStatusCode());
+    }
+
+
+    public function sitemap()
+    {
+        $data = [
+            'articles' => Article::get(['slug', 'updated_at']),
+            'articles_categories' => ArticleCategory::get(['slug', 'updated_at']),
+        ];
+
+        return response()->view('app.sitemap', $data)->header('Content-Type', 'text/xml');
     }
 }
