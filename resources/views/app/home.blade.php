@@ -30,7 +30,8 @@
                     </a>
                 </div>
                 <div class="sc-1__app device">
-                    <div class="device__phone"><img src="/images/X-phone-animation.png">
+                    <div class="device__phone">
+                        <img src="/images/X-phone-animation.png">
                         <div class="device__animation">
                             <div class="device__ring device__ring-1"></div>
                             <div class="device__ring device__ring-2"></div>
