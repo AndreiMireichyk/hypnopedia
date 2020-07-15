@@ -12,10 +12,6 @@
     <meta property="og:description" content="@yield('og-desc')"/>
     <meta property="og:url" content="@yield('og-url')"/>
     <meta property="og:image" content="@yield('og-img')"/>
-
-    @section('css')
-        <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
-    @show
 </head>
 <body>
 <header class="header @yield('is_light')">
@@ -85,6 +81,9 @@
 </footer>
 
 {{--@include('app.layout.metrics')--}}
+@section('css')
+    <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
+@show
 @section('js')
     <script type="text/javascript" src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
 @show
