@@ -32,7 +32,7 @@
                 <div class="sc-1__app device">
                     <div class="device__phone"><img src="/images/X-phone-animation.png">
                         <div class="device__animation">
-                            <div class="device__ring device__ring-1">1</div>
+                            <div class="device__ring device__ring-1"></div>
                             <div class="device__ring device__ring-2"></div>
                             <div class="device__ring device__ring-3"></div>
                             <div class="device__ring device__ring-3"></div><a class="device__ring device__play" href="javascript:void(0)" data-toggle="modal" data-target="#video"><img class="play" src="/images/play-2.svg"><img class="watch" src="/images/WATCH.svg"><img class="video" src="/images/VIDEO.svg"></a>
