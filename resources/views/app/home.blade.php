@@ -95,7 +95,7 @@
                 <div class="sc-3__title">Main features</div>
                 <div class="sc-3__features">
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/1.png')}}?{{env('VERSION')}}"
+                        <img class="sc-3__feature-cover" src="{{asset('/images/1.jpg')}}?{{env('VERSION')}}"
                              alt="HYPNOPEDIA">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">HYPNOPEDIA</div>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/2.png')}}?{{env('VERSION')}}"
+                        <img class="sc-3__feature-cover" src="{{asset('/images/2.jpg')}}?{{env('VERSION')}}"
                              alt="SMART-ALARM">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">SMART-ALARM</div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/3.png')}}?{{env('VERSION')}}"
+                        <img class="sc-3__feature-cover" src="{{asset('/images/3.jpg')}}?{{env('VERSION')}}"
                              alt="360-DEGREE ASMR">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">360-DEGREE ASMR</div>
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="sc-3__feature">
-                        <img class="sc-3__feature-cover" src="{{asset('/images/4.png')}}?{{env('VERSION')}}"
+                        <img class="sc-3__feature-cover" src="{{asset('/images/4.jpg')}}?{{env('VERSION')}}"
                              alt="STATISTICS">
                         <div class="sc-3__feature-info">
                             <div class="sc-3__feature-title">STATISTICS</div>
