@@ -84,7 +84,7 @@
     </div>
 </footer>
 
-@include('app.layout.metrics')
+{{--@include('app.layout.metrics')--}}
 @section('js')
     <script type="text/javascript" src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
 @show
