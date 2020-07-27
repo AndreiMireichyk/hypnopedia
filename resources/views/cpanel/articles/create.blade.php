@@ -87,6 +87,7 @@
                                 {!! Form::label('meta_title', 'Title', ['class' => 'col-sm-4 col-form-label']) !!}
                                 <div class="col-sm-8">
                                     {!! Form::text('meta_title', old('meta_title'), ['class' => 'form-control', 'id'=>'meta_title', 'placeholder'=>'Заголовок статьи']); !!}
+                                    @include('cpanel.layouts.form_errors', ['errors'=>$errors->get('meta_title')])
                                 </div>
                             </div>
 
@@ -94,6 +95,7 @@
                                 {!! Form::label('meta_keys', 'Keys', ['class' => 'col-sm-4 col-form-label']) !!}
                                 <div class="col-sm-8">
                                     {!! Form::text('meta_keys', old('meta_keys'), ['class' => 'form-control', 'id'=>'meta_keys', 'placeholder'=>'Ключи']); !!}
+                                    @include('cpanel.layouts.form_errors', ['errors'=>$errors->get('meta_keys')])
                                 </div>
                             </div>
 
@@ -101,6 +103,7 @@
                                 {!! Form::label('meta_desc', 'Description', ['class' => 'col-sm-4 col-form-label']) !!}
                                 <div class="col-sm-8">
                                     {!! Form::text('meta_desc', old('meta_desc'), ['class' => 'form-control', 'id'=>'meta_desc', 'placeholder'=>'Описание']); !!}
+                                    @include('cpanel.layouts.form_errors', ['errors'=>$errors->get('meta_desc')])
                                 </div>
                             </div>
 
