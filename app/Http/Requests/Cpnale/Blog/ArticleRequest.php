@@ -28,6 +28,9 @@ class ArticleRequest extends FormRequest
             'announcement'=>'required',
             'cover_path'=>'required',
             'categories'=>'required',
+            'meta_title'=>'max:180',
+            'meta_keys'=>'max:180',
+            'meta_desc'=>'max:180',
         ];
     }
 }

@@ -24,7 +24,10 @@ class ArticleCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required'
+            'title'=>'required',
+            'meta_title'=>'max:180',
+            'meta_keys'=>'max:180',
+            'meta_desc'=>'max:180',
         ];
     }
 }
