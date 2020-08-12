@@ -25,7 +25,7 @@
                     <div class="sc-1__watch-video">
                         <a class="btn" href="javascript:void(0)" data-toggle="modal" data-target="#video">Watch
                             video</a></div>
-                    <a class="sc-1__app-btn" href="https://go.onelink.me/app/af8bdc55" target="_blank">
+                    <a class="sc-1__app-btn" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">
                         <img src="{{asset('/images/app_store_cta.svg')}}?{{env('VERSION')}}" alt="install app">
                     </a>
                 </div>
