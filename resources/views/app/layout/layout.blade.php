@@ -85,7 +85,7 @@
     <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
 @show
 @section('js')
-    <script type="text/javascript" src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
+    <script src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
 @show
 @include('app.layout.metrics')
 </body>
