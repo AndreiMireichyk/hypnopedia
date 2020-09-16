@@ -69,7 +69,7 @@
             <a class="menu__item" href="{{asset('/assets/docs/PrivacyPolicy.pdf')}}?{{env('VERSION')}}" target="_blank">Privacy policy</a>
             <a class="menu__item" href="{{asset('/assets/docs/Terms&Conditions.pdf')}}?{{env('VERSION')}}" target="_blank">Terms of
                 Service</a>
-            <a class="menu__item" href="https://go.onelink.me/app/25150d3" target="_blank">GET THE APP</a>
+            <a class="menu__item" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">GET THE APP</a>
             <a class="menu__item" href="{{route('contacts')}}">CONTACTS</a>
         </div>
         <div class="footer__socials socials">
