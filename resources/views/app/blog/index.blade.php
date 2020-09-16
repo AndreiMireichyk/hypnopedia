@@ -107,7 +107,7 @@
             </section>
         @endif
 
-        <section class="blog__title">Latest news</section>
+        <h1 class="blog__title">Latest news</h1>
 
         <section class="blog__body body">
             <div class="body__main">

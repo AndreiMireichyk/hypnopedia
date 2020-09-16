@@ -1,8 +1,8 @@
 @extends('app.layout.layout')
 
-@section('title', 'Sleep and Learn with Hypnopedia')
+@section('title', 'LLC Pyrat contact page | Hypnopedia')
 
-@section('meta_desc', 'Improve your mental health and change your life through motivating affirmations with Hypnopedia App.')
+@section('meta_desc', 'Hypnopedia startup is based on scientific researchers, focused on mental health and effective sleep.')
 
 @section('css')
     @parent

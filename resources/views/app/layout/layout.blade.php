@@ -66,8 +66,8 @@
             <a class="menu__item" href="{{route('home')}}">
                 <img src="{{asset('/images/logo-v1.svg')}}?{{env('VERSION')}}" alt="logo">
             </a>
-            <a class="menu__item" href="{{asset('/assets/docs/PrivacyPolicy.pdf')}}?{{env('VERSION')}}" target="_black">Privacy policy</a>
-            <a class="menu__item" href="{{asset('/assets/docs/Terms&Conditions.pdf')}}?{{env('VERSION')}}" target="_black">Terms of
+            <a class="menu__item" href="{{asset('/assets/docs/PrivacyPolicy.pdf')}}?{{env('VERSION')}}" target="_blank">Privacy policy</a>
+            <a class="menu__item" href="{{asset('/assets/docs/Terms&Conditions.pdf')}}?{{env('VERSION')}}" target="_blank">Terms of
                 Service</a>
             <a class="menu__item" href="https://go.onelink.me/app/25150d3" target="_blank">GET THE APP</a>
             <a class="menu__item" href="{{route('contacts')}}">CONTACTS</a>
