@@ -23,7 +23,7 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="{{asset('/js/article.bundle.js')}}?{{env('VERSION')}}"></script>
+    <script src="{{asset('/js/article.bundle.js')}}?{{env('VERSION')}}"></script>
 @endsection
 
 @section('content')

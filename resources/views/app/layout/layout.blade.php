@@ -76,7 +76,7 @@
             <a class="socials__item tw" href="https://twitter.com/Hypnopedia_app" target="_blank"></a>
             <a class="socials__item fb" href="https://www.facebook.com/hypnopedia.application" target="_blank"></a>
         </div>
-    </div><a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank"><img src="/images/ph_badge.svg"></a>
+    </div><a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank"><img src="/images/ph_badge.svg" alt="product hunt"></a>
     </div>
 </footer>
 

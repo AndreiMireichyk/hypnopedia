@@ -11,7 +11,7 @@
 
 @section('js')
     @parent
-    <script type="text/javascript" src="{{asset('/js/contacts.bundle.js?v1')}}?{{env('VERSION')}}"></script>
+    <script src="{{asset('/js/contacts.bundle.js?v1')}}?{{env('VERSION')}}"></script>
 @endsection
 
 @section('content')
