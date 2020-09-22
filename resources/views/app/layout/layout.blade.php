@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('/images/favicon.png')}}?{{env('VERSION')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/images/apple-touch-icon.png')}}?{{env('VERSION')}}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/images/favicon-32x32.png')}}?{{env('VERSION')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/images/favicon-16x16.png')}}?{{env('VERSION')}}">
+    <link rel="manifest" href="{{asset('/images/site.webmanifest')}}?{{env('VERSION')}}">
+    <link rel="mask-icon" href="{{asset('/images//safari-pinned-tab.svg')}}?{{env('VERSION')}}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <title>@yield('title')</title>
 
     <meta name="description" content="@yield('meta_desc')">
@@ -12,6 +20,11 @@
     <meta property="og:description" content="@yield('og-desc')"/>
     <meta property="og:url" content="@yield('og-url')"/>
     <meta property="og:image" content="@yield('og-img')"/>
+
+
+    @section('css')
+        <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
+    @show
 </head>
 <body>
 <header class="header @yield('is_light')">
@@ -81,9 +94,6 @@
 </footer>
 
 
-@section('css')
-    <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
-@show
 @section('js')
     <script src="{{asset('/js/common.bundle.js')}}?{{env('VERSION')}}"></script>
 @show
