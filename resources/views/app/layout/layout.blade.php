@@ -21,7 +21,6 @@
     <meta property="og:url" content="@yield('og-url')"/>
     <meta property="og:image" content="@yield('og-img')"/>
 
-
     @section('css')
         <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
     @show

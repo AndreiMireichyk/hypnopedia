@@ -17,7 +17,7 @@
 
 @section('content')
     <main class="home">
-        <section class="sc-1" id="about">
+        <div class="sc-1" id="about">
             <div class="sc-1__wrap">
                 <div class="sc-1__info">
                     <h1 class="sc-1__title">A new way to enhance<br>your mental health<br>and motivation</h1>
@@ -42,8 +42,8 @@
                     <div class="device__watch"></div>
                 </div>
             </div>
-        </section>
-        <section class="sc-2" id="how_it_work">
+        </div>
+        <div class="sc-2" id="how_it_work">
             <div class="sc-2__wrap">
                 <div class="sc-2__title">How it works?
                     <div class="sc-2__title-img"><img src="/images/health.svg" alt="health"></div>
@@ -90,8 +90,8 @@
                     </li>
                 </ul>
             </div>
-        </section>
-        <section class="sc-3" id="features">
+        </div>
+        <div class="sc-3" id="features">
             <div class="sc-3__wrap">
                 <div class="sc-3__title">Main features</div>
                 <div class="sc-3__features">
@@ -138,8 +138,8 @@
                     <a class="btn" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">Try for free</a>
                 </div>
             </div>
-        </section>
-        <section class="sc-4" id="science">
+        </div>
+        <div class="sc-4" id="science">
             <div class="sc-4__wrap">
                 <div class="sc-4__sciences science">
                     <div class="science__h">Science</div>
@@ -210,9 +210,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="sc-5" id="faq">
+        </div>
+        <div class="sc-5" id="faq">
             <div class="sc-5__wrap">
                 <div class="sc-5__title">FAQ</div>
                 <div class="sc-5__accordion">
@@ -302,7 +301,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         <div class="modal" id="video" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content"><a class="modal-close" href="javascript:void(0)"
