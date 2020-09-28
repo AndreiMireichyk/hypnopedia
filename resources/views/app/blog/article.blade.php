@@ -93,6 +93,7 @@
                 </div>
             </div>--}}
         </section>
+        @include('app.shema.post')
     </main>
 @endsection
 

@@ -33,4 +33,5 @@
             <div id="contacts_form"></div>
         </div>
     </main>
+    @include('app.shema.contacts')
 @endsection
