@@ -19,7 +19,7 @@
     "name": "LLC Pyrat",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://hypnopedia.site/images/logo-light.svg"
+      "url": "https://hypnopedia.site/apple-touch-icon.png"
     }
   },
   "description": "{{$article->meta_desc}}"
