@@ -760,10 +760,18 @@
         }
 
         &__name {
+            display: flex;
+            align-items: center;
             font-weight: bold;
             font-size: 40px;
             color: #24375F;
             margin-bottom: 8px;
+        }
+
+        &__fb{
+            position: relative;
+            top: 1px;
+            padding-left: 16px;
         }
 
         &__position {
@@ -904,6 +912,16 @@
             &__cover {
                 width: 250px;
                 height: 250px;
+            }
+
+            &__name{
+                font-size: 34px;
+            }
+
+            &__fb{
+                position: relative;
+                top: 2px;
+                padding-left: 12px;
             }
         }
     }
