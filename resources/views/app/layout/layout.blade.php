@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/images/favicon.png')}}?{{env('VERSION')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/images/apple-touch-icon.png')}}?{{env('VERSION')}}/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/images/favicon-32x32.png')}}?{{env('VERSION')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/images/favicon-16x16.png')}}?{{env('VERSION')}}">
-    <link rel="manifest" href="{{asset('/images/site.webmanifest')}}?{{env('VERSION')}}">
-    <link rel="mask-icon" href="{{asset('/images//safari-pinned-tab.svg')}}?{{env('VERSION')}}" color="#5bbad5">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/favicon.ico')}}?{{env('VERSION')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/apple-touch-icon.png')}}?{{env('VERSION')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/favicon-32x32.png')}}?{{env('VERSION')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/favicon-16x16.png')}}?{{env('VERSION')}}">
+    <link rel="manifest" href="{{asset('/site.webmanifest')}}?{{env('VERSION')}}">
+    <link rel="mask-icon" href="{{asset('/safari-pinned-tab.svg')}}?{{env('VERSION')}}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -22,7 +22,7 @@
     <meta property="og:image" content="@yield('og-img')"/>
 
     @section('css')
-        <link href="{{asset('/css/common.css')}}?{{env('VERSION')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('/css/common.css')}}?{{env('VERSION')}}" >
     @show
 </head>
 <body>
@@ -89,7 +89,7 @@
             <a class="socials__item fb" href="https://www.facebook.com/hypnopedia.application" target="_blank"></a>
         </div>
     </div>
-        <a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank"><img src="/images/ph_badge.svg" alt="product hunt"></a>
+        <a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank"><img src="{{asset('/images/ph_badge.svg')}}?{{env('VERSION')}}" alt="product hunt"></a>
     </div>
 </footer>
 

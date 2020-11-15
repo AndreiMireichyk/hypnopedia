@@ -67,14 +67,14 @@
                 <div class="collection">
                     <div class="collection__title">Latest news</div>
                     <div class="collection__list">
-                        @foreach($lastFiveArticles as $key=>$article)
+                        @foreach($lastFiveArticles as $key=>$last_article)
                             <div class="collection__item">
                                 <div class="collection__num">{{$key+1}}</div>
                                 <div class="collection__info">
                                     <a class="collection__article"
-                                       href="{{route('blog.article',$article->slug)}}">{{$article->title}}</a>
+                                       href="{{route('blog.article',$last_article->slug)}}">{{$last_article->title}}</a>
                                     <a class="collection__category"
-                                       href="{{route('blog.category', $article->categories->first()->slug)}}">{{$article->categories->first()->title}}</a>
+                                       href="{{route('blog.category', $last_article->categories->first()->slug)}}">{{$last_article->categories->first()->title}}</a>
                                 </div>
                             </div>
                         @endforeach
