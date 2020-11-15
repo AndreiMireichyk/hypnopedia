@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: *?*
 Sitemap: https://hypnopedia.site/sitemap.xml
 Host: https://hypnopedia.site
