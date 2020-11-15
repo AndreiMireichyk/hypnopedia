@@ -59,7 +59,7 @@
                     smart alarm clock will wake you up at the most convenient time before the set wake-up time
                 </p>
                 <p class="sc-2__action">
-                    <a class="btn" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">
+                    <a class="btn gtm-app-store-sc-2" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">
                         Try for free
                     </a>
                 </p>
@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div class="sc-3__action">
-                    <a class="btn" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">Try for free</a>
+                    <a class="btn gtm-app-store-sc-3" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">Try for free</a>
                 </div>
             </div>
         </div>
