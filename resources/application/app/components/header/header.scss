@@ -18,6 +18,7 @@
         max-width: 1200px;
         padding: 0 25px;
         margin: 32px auto;
+        box-sizing: border-box;
     }
 
     &.light &__wrap {

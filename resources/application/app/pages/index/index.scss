@@ -28,6 +28,12 @@
         padding: 105px 25px 60px 25px;
     }
 
+    &__badge{
+        margin-bottom: auto;
+        padding-bottom: 25px;
+
+    }
+
     &__title {
         font-size: 55px;
         font-weight: bold;
@@ -304,6 +310,10 @@
 
         &__app {
             display: none;
+        }
+
+        &__badge{
+            text-align: center;
         }
 
         &__watch-video{

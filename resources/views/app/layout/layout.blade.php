@@ -89,7 +89,7 @@
             <a class="socials__item fb" href="https://www.facebook.com/hypnopedia.application" target="_blank"></a>
         </div>
     </div>
-        <a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank"><img src="{{asset('/images/ph_badge.svg')}}?{{env('VERSION')}}" alt="product hunt"></a>
+        <a class="footer__badge" href="https://www.producthunt.com/golden-kitty-awards-2020/health-and-fitness" target="_blank"><img src="{{asset('/images/ph_badge.svg')}}?{{env('VERSION')}}" alt="product hunt"></a>
     </div>
 </footer>
 

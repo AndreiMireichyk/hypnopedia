@@ -20,6 +20,7 @@
         <div class="sc-1" id="about">
             <div class="sc-1__wrap">
                 <div class="sc-1__info">
+                    <a class="sc-1__badge" href="https://www.producthunt.com/golden-kitty-awards-2020/health-and-fitness" target="_blank"><img src="{{asset('/images/ph_badge.svg')}}?{{env('VERSION')}}" alt="producthunt"></a>
                     <h1 class="sc-1__title">A new way to enhance<br>your mental health<br>and motivation</h1>
                     <h2 class="sc-1__subtitle">Improve yourself while sleeping with affirmations</h2>
                     <div class="sc-1__watch-video">
