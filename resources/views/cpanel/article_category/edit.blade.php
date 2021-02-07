@@ -33,12 +33,12 @@
                 </div>
             @endif
 
-            {!! Form::open(['route' => ['cp.categories.update', $category->id], 'method' => 'put']) !!}
+            {!! Form::open(['route' => ['cp.categories.update', ['category'=>$category->id, 'locale'=> app()->getLocale()]], 'method' => 'put']) !!}
             <div class="d-f jc-sb ai-c">
                 <h4 class="c-grey-900 mT-10 mB-30">Изменение тэга</h4>
                 <div>
                     <button type="submit" class="btn cur-p btn-primary">Сохранить</button>
-                    <a href="{{route('cp.categories.index')}}" class="btn cur-p btn-outline-primary">Назад</a>
+                    <a href="{{route('cp.categories.index', app()->getLocale())}}" class="btn cur-p btn-outline-primary">Назад</a>
                 </div>
             </div>
 
@@ -114,7 +114,7 @@
                 <h4 class="c-grey-900 mT-10 mB-30">&nbsp;</h4>
                 <div>
                     <button type="submit" class="btn cur-p btn-primary">Сохранить</button>
-                    <a href="{{route('cp.categories.index')}}" class="btn cur-p btn-outline-primary">Назад</a>
+                    <a href="{{route('cp.categories.index', app()->getLocale())}}" class="btn cur-p btn-outline-primary">Назад</a>
                 </div>
             </div>
             {!! Form::close() !!}

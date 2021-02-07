@@ -28,7 +28,7 @@
 <body>
 <header class="header @yield('is_light')">
     <div class="header__wrap">
-        <a class="header__logo" href="{{route('home')}}">
+        <a class="header__logo" href="{{route('home', ['locale'=>app()->getLocale()])}}">
             <img class="normal" src="{{asset('/images/logo-v1.svg')}}?{{env('VERSION')}}" alt="logo">
             <img class="light" src="{{asset('/images/logo-light.svg')}}?{{env('VERSION')}}" alt="logo">
         </a>
@@ -36,37 +36,51 @@
         <div class="header__menu">
             @if (Route::currentRouteName() == 'home')
                 <div class="active">
-                    <a class="header__menu-item" href="/#about" data-menu-spy>About</a>
+                    <a class="header__menu-item" href="/{{app()->getLocale()}}#about" data-menu-spy>About</a>
                 </div>
             @else
                 <div>
-                    <a class="header__menu-item" href="/#about" data-menu-spy>About</a>
+                    <a class="header__menu-item" href="/{{app()->getLocale()}}#about" data-menu-spy>About</a>
                 </div>
             @endif
-            <div><a class="header__menu-item" href="/#how_it_work" data-menu-spy>HOW IT WORKS</a></div>
-            <div><a class="header__menu-item" href="/#features" data-menu-spy>FEATURES</a></div>
-            <div><a class="header__menu-item" href="/#science" data-menu-spy>SCIENCE</a></div>
-            <div><a class="header__menu-item" href="/#faq" data-menu-spy>FAQ</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#how_it_work" data-menu-spy>HOW IT WORKS</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#features" data-menu-spy>FEATURES</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#science" data-menu-spy>SCIENCE</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#faq" data-menu-spy>FAQ</a></div>
 
             @if (in_array(Route::currentRouteName(), ['blog', 'blog.article', 'blog.category']))
                 <div class="active">
-                    <a class="header__menu-item active" href="{{route('blog')}}">Blog</a>
+                    <a class="header__menu-item active" href="{{route('blog', ['locale'=>app()->getLocale()])}}">Blog</a>
                 </div>
             @else
                 <div>
-                    <a class="header__menu-item" href="{{route('blog')}}">Blog</a>
+                    <a class="header__menu-item" href="{{route('blog', ['locale'=>app()->getLocale()])}}">Blog</a>
                 </div>
             @endif
 
             @if (Route::currentRouteName() == 'contacts')
                 <div class="active">
-                    <a class="header__menu-item" href="{{route('contacts')}}">Contact</a>
+                    <a class="header__menu-item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">Contact</a>
                 </div>
             @else
                 <div>
-                    <a class="header__menu-item" href="{{route('contacts')}}">Contact</a>
+                    <a class="header__menu-item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">Contact</a>
                 </div>
             @endif
+                <div>
+                    <div class="lang">
+                        <div class="lang__label"><img class="lang__used" src="/images/{{app()->getLocale() === 'en' ? 'en' : 'ru'}}.svg"></div>
+                        <div class="lang__list">
+                            <a class="lang__item {{app()->getLocale() === 'en' ? 'active' : ''}}" href="{{route('lang.en')}}">
+                                <img src="{{asset('/images/en.svg')}}?{{env('VERSION')}}">
+                                <span>English</span>
+                            </a>
+                            <a class="lang__item {{app()->getLocale() === 'ru' ? 'active' : ''}}" href="{{route('lang.ru')}}">
+                                <img src="{{asset('/images/ru.svg')}}?{{env('VERSION')}}">
+                                <span>Русский</span></a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </header>
@@ -75,14 +89,14 @@
     <div class="footer__wrap">
         <div class="footer__group">
         <div class="footer__menu menu">
-            <a class="menu__item" href="{{route('home')}}">
+            <a class="menu__item" href="{{route('home', ['locale'=>app()->getLocale()])}}">
                 <img src="{{asset('/images/logo-v1.svg')}}?{{env('VERSION')}}" alt="logo">
             </a>
             <a class="menu__item" href="{{asset('/assets/docs/PrivacyPolicy.pdf')}}?{{env('VERSION')}}" target="_blank">Privacy policy</a>
             <a class="menu__item" href="{{asset('/assets/docs/Terms&Conditions.pdf')}}?{{env('VERSION')}}" target="_blank">Terms of
                 Service</a>
             <a class="menu__item get-app" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">GET THE APP</a>
-            <a class="menu__item" href="{{route('contacts')}}">CONTACTS</a>
+            <a class="menu__item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">CONTACTS</a>
         </div>
         <div class="footer__socials socials">
             <a class="socials__item tw" href="https://twitter.com/Hypnopedia_app" target="_blank"></a>

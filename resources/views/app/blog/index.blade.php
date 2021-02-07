@@ -23,9 +23,9 @@
 
                 <div class="categories__tabs nav nav-tabs" role="tablist">
                     @foreach($categories as $key=>$category)
-                        @if ($category->articles->isEmpty())
+                    {{--    @if ($category->articles->isEmpty())
                             @continue
-                        @endif
+                        @endif--}}
                         <a class="categories__tab {{$categories->first()->id === $category->id ? 'active' : ''}}" data-toggle="tab"
                            href="#cat-{{$category->id}}">{{$category->title}}</a>
                     @endforeach
@@ -34,9 +34,9 @@
                 <div class="tab-content">
                     @foreach($categories as $key=>$category)
 
-                        @if ($category->articles->isEmpty())
+                  {{--      @if ($category->articles->isEmpty())
                             @continue
-                        @endif
+                        @endif--}}
 
                         <div class="categories__articles top-article tab-pane {{$categories->first()->id === $category->id ? 'active' : ''}}"
                              id="cat-{{$category->id}}" role="tabpanel">
@@ -44,20 +44,21 @@
                             @foreach ($category->articles->take(1) as $article)
                                 <div class="top-article__left">
                                     <div class="lg-post">
-                                        <a class="lg-post__cover" href="{{route('blog.article', $article->slug)}}"
+                                        <a class="lg-post__cover" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}"
+
                                            style="background-image: url('{{$article->cover_path}}')"></a>
                                         <a class="lg-post__title"
-                                           href="{{route('blog.article', $article->slug)}}">{{$article->title}}</a>
+                                           href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">{{$article->title}}</a>
                                         <div class="lg-post__desc">{{$article->announcement}}</div>
                                         <div class="lg-post__group">
                                             <a class="lg-post__category"
-                                               href="{{route('blog.category', $article->categories->first()->slug)}}">
+                                               href="{{route('blog.category',['locale'=>app()->getLocale(), 'slug'=> $article->categories->first()->slug])}}">
                                                 {{$article->categories->first()->title}}
                                             </a>
-                                            <a class="lg-post__date" href="{{route('blog.article', $article->slug)}}">
+                                            <a class="lg-post__date" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
                                                 {{$article->created_at->diffForHumans()}}
                                             </a>
-                                            <a class="lg-post__read" href="{{route('blog.article', $article->slug)}}">
+                                            <a class="lg-post__read" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
                                                 READ {{$article->readingMin}} MIN
                                             </a>
                                         </div>
@@ -70,23 +71,23 @@
                                 @foreach ($category->articles->slice(1)->take(3) as $article)
                                     <div class="sm-post">
                                         <div class="sm-post__grid">
-                                            <a class="sm-post__cover" href="{{route('blog.article', $article->slug)}}"
+                                            <a class="sm-post__cover" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}"
                                                style="background-image: url({{$article->cover_path}})"></a>
                                             <div class="sm-post__info">
                                                 <a class="sm-post__title"
-                                                   href="{{route('blog.article', $article->slug)}}">{{$article->title}}</a>
+                                                   href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">{{$article->title}}</a>
                                                 <div class="sm-post__desc">{{$article->announcement}}</div>
                                                 <div class="sm-post__group">
                                                     <a class="sm-post__category"
-                                                       href="{{route('blog.category', $article->categories->first()->slug)}}">
+                                                       href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$article->categories->first()->slug])}}">
                                                         {{$article->categories->first()->title}}
                                                     </a>
                                                     <a class="sm-post__date"
-                                                       href="{{route('blog.article', $article->slug)}}">
+                                                       href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
                                                         {{$article->created_at->diffForHumans()}}
                                                     </a>
                                                     <a class="sm-post__read"
-                                                       href="{{route('blog.article', $article->slug)}}">
+                                                       href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
                                                         READ {{$article->readingMin}} MIN
                                                     </a>
                                                 </div>
@@ -97,7 +98,7 @@
                             </div>
                             @if($category->articles->count())
                                 <div class="top-article__bootom">
-                                    <a class="top-article__btn" href="{{route('blog.category', $category->slug)}}">All
+                                    <a class="top-article__btn" href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$category->slug])}}">All
                                         articles</a>
                                 </div>
                             @endif
@@ -114,20 +115,20 @@
 
                 @foreach ($articles as $article)
                     <div class="body__post md-post">
-                        <a class="md-post__cover" href="{{route('blog.article', $article->slug)}}"
+                        <a class="md-post__cover" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}"
                            style="background-image: url('{{$article->cover_path}}')"></a>
                         <a class="md-post__title"
-                           href="{{route('blog.article', $article->slug)}}">{{$article->title}}</a>
+                           href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">{{$article->title}}</a>
                         <div class="md-post__desc">{{$article->announcement}}</div>
                         <div class="md-post__group">
                             <a class="lg-post__category"
-                               href="{{route('blog.category', $article->categories->first()->slug)}}">
+                               href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$article->categories->first()->slug])}}">
                                 {{$article->categories->first()->title}}
                             </a>
-                            <a class="md-post__date" href="{{route('blog.article', $article->slug)}}">
+                            <a class="md-post__date" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
                                 {{$article->created_at->diffForHumans()}}
                             </a>
-                            <a class="md-post__read" href="{{route('blog.article', $article->slug)}}">
+                            <a class="md-post__read" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
                                 READ {{$article->readingMin}} MIN
                             </a>
                         </div>
@@ -145,9 +146,9 @@
                                     <div class="popular__num">{{$key+1}}</div>
                                     <div class="popular__group">
                                         <a class="popular__title"
-                                           href="{{route('blog.article', $popular->article->slug)}}">{{$popular->article->title}}</a>
+                                           href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$popular->article->slug])}}">{{$popular->article->title}}</a>
                                         <a class="popular__category"
-                                           href="{{route('blog.category', $popular->article->categories->first()->slug)}}">{{$popular->article->categories->first()->title}}</a>
+                                           href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$popular->article->categories->first()->slug])}}">{{$popular->article->categories->first()->title}}</a>
                                     </div>
                                 </div>
                             @endforeach
@@ -156,7 +157,7 @@
                     <div class="aside__title">Tags</div>
                     <div class="aside-cat">
                         @foreach($categories as $key=>$category)
-                            <a class="aside-cat__item" href="{{route('blog.category', $category->slug)}}">
+                            <a class="aside-cat__item" href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$category->slug])}}">
                                 {{$category->title}}
                             </a>
                         @endforeach

@@ -17,10 +17,11 @@ class ArticlePopularController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($lang)
     {
-        $populars = ArticlePopular::with(['article.categories'])->get();
-        $articles = Article::whereNotIn('id', $populars->pluck('article_id'))->get()->pluck('title', 'id');
+        $populars = ArticlePopular::with(['article.categories'])->lang()->get();
+
+        $articles = Article::whereNotIn('id', $populars->pluck('article_id'))->lang()->get()->pluck('title', 'id');
 
         return  view('cpanel.article_popular.index', [
             'populars'=>$populars,
@@ -35,13 +36,15 @@ class ArticlePopularController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(ArticlePopularRequest $request)
+    public function store($lang, ArticlePopularRequest $request)
     {
+        $request->merge(['lang'=>app()->getLocale()]);
+
         $popular = new ArticlePopular();
 
-        $popular->fill($request->all('article_id'))->save();
+        $popular->fill($request->all(['article_id', 'lang']))->save();
 
-        return redirect()->route('cp.populars.index')->with('alert', 'Статья добавлена в популярные');
+        return redirect()->route('cp.populars.index', app()->getLocale())->with('alert', 'Статья добавлена в популярные');
     }
 
 
@@ -52,9 +55,9 @@ class ArticlePopularController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy(ArticlePopular $popular)
+    public function destroy($lang, ArticlePopular $popular)
     {
         $popular->delete();
-        return redirect()->route('cp.populars.index')->with('alert', 'Статья удалена из популярных');
+        return redirect()->route('cp.populars.index', app()->getLocale())->with('alert', 'Статья удалена из популярных');
     }
 }

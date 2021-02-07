@@ -12,7 +12,7 @@
 
             <div class="d-f jc-sb ai-c">
                 <h4 class="c-grey-900 mT-10 mB-30">Пользователи</h4>
-                <a href="{{route('cp.users.create')}}" class="btn cur-p btn-primary">Добавить пользователя</a>
+                <a href="{{route('cp.users.create', app()->getLocale())}}" class="btn cur-p btn-primary">Добавить пользователя</a>
             </div>
 
             <div class="row">
@@ -50,9 +50,9 @@
                                     <td class="ta-c">{{$user->articles->count()}}</td>
                                     <td class="ta-c">{{$user->created_at->format("d-m-Y h:i")}}</td>
                                     <td class="ta-r">
-                                        <a href="{{route('cp.users.edit', $user->id)}}"
+                                        <a href="{{route('cp.users.edit', ['user'=>$user->id, 'locale'=> app()->getLocale()])}}"
                                            class="btn btn-sm cur-p btn-primary">Изменить</a>
-                                        {!! Form::open(['route' => ['cp.users.destroy', $user->id], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
+                                        {!! Form::open(['route' => ['cp.users.destroy', ['user'=>$user->id, 'locale'=> app()->getLocale()]], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
                                         <button type="submit" class="btn btn-sm cur-p btn-danger">
                                             Удалить
                                         </button>

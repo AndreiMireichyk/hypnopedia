@@ -23,6 +23,12 @@ class ArticleCategory extends Model
         ];
     }
 
+    public function scopeLang($builder)
+    {
+        $builder->where('lang', app()->getLocale());
+        return $builder;
+    }
+
     public function articles(){
         return $this->belongsToMany(Article::class)->orderBy('id','desc');
     }

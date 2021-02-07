@@ -34,11 +34,19 @@ class Article extends Model
         return $this->belongsToMany(ArticleCategory::class);
     }
 
-    public function getFirstCategory(){
+    public function getFirstCategory()
+    {
 
     }
 
-    public function getReadingMinAttribute(){
+    public function scopeLang($builder)
+    {
+        $builder->where('lang', app()->getLocale());
+        return $builder;
+    }
+
+    public function getReadingMinAttribute()
+    {
         return ceil(iconv_strlen($this->getAttribute('lb_content')) / 1500);
     }
 }

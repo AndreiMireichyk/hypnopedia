@@ -9,14 +9,6 @@ RUN set -e; \
     && mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 
 
-#RUN { \
-#    echo 'session.save_handler = redis'; \
-#    echo 'session.save_path = tcp://abw-redis:6379'; \
-#    echo 'session.cookie_domain  = .abw.test'; \
-#    echo 'date.timezone = Europe/Minsk'; \
-#
-#} >> $PHP_INI_DIR/php.ini
-
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY ./composer.json ./composer.json

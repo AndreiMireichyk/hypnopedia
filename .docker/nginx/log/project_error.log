@@ -1,1 +1,27 @@
 2020/12/03 19:44:37 [error] 27#27: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/app/public/../vendor/autoload.php): failed to open stream: No such file or directory in /app/public/index.php on line 24PHP message: PHP Fatal error:  require(): Failed opening required '/app/public/../vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /app/public/index.php on line 24" while reading response header from upstream, client: 172.23.0.1, server: app.com, request: "GET / HTTP/1.1", upstream: "fastcgi://172.23.0.3:9000", host: "127.0.0.1:8080"
+2021/02/07 10:22:40 [error] 28#28: *49 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Illuminate\Routing\Exceptions\UrlGenerationException: Missing required parameters for [Route: home] [URI: {locale}]. in /app/vendor/laravel/framework/src/Illuminate/Routing/Exceptions/UrlGenerationException.php:17
+Stack trace:
+#0 /app/vendor/laravel/framework/src/Illuminate/Routing/RouteUrlGenerator.php(91): Illuminate\Routing\Exceptions\UrlGenerationException::forMissingParameters(Object(Illuminate\Routing\Route))
+#1 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(436): Illuminate\Routing\RouteUrlGenerator->to(Object(Illuminate\Routing\Route), Array, true)
+#2 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(417): Illuminate\Routing\UrlGenerator->toRoute(Object(Illuminate\Routing\Route), Array, true)
+#3 /app/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(777): Illuminate\Routing\UrlGenerator->route('home', Array, true)
+#4 /app/storage/framework/views/043e1065b01a4dcefddcd619ea74c5952c14ded6.php(473): route('home')
+#5 /app/vendor/laravel/frame in /app/vendor/laravel/framework/src/Illuminate/Routing/Exceptions/UrlGenerationException.php on line 17PHP message: PHP Fatal error:  Uncaught Illuminate\Routing\Exceptions\UrlGenerationException: Missing required parameters for [Route: home] [URI: {locale}]. in /app/vendor/laravel/framework/src/Illuminate/Routing/Exceptions/UrlGenerationException.php:17
+Stack trace:
+#0 /app/vendor/laravel/framework/src/Illuminate/Routing/RouteUrlGenerator.php(91): Illuminate\Routing\Exceptions\UrlGenerationException::forMissingParameters(Object(Illuminate\Routing\Route))
+#1 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(436): Illuminate\Routing\RouteUrlGenerator->to(Object(Illuminate\Routing\Route), Array, true)
+#2 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(417): Illuminate\Routing\UrlGenerator->toRoute(Object(Illuminate\Routing\Route), Array, true)
+#3 /app/vendor/laravel/framewo
+2021/02/07 10:22:42 [error] 28#28: *49 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Illuminate\Routing\Exceptions\UrlGenerationException: Missing required parameters for [Route: home] [URI: {locale}]. in /app/vendor/laravel/framework/src/Illuminate/Routing/Exceptions/UrlGenerationException.php:17
+Stack trace:
+#0 /app/vendor/laravel/framework/src/Illuminate/Routing/RouteUrlGenerator.php(91): Illuminate\Routing\Exceptions\UrlGenerationException::forMissingParameters(Object(Illuminate\Routing\Route))
+#1 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(436): Illuminate\Routing\RouteUrlGenerator->to(Object(Illuminate\Routing\Route), Array, true)
+#2 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(417): Illuminate\Routing\UrlGenerator->toRoute(Object(Illuminate\Routing\Route), Array, true)
+#3 /app/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(777): Illuminate\Routing\UrlGenerator->route('home', Array, true)
+#4 /app/storage/framework/views/043e1065b01a4dcefddcd619ea74c5952c14ded6.php(473): route('home')
+#5 /app/vendor/laravel/frame in /app/vendor/laravel/framework/src/Illuminate/Routing/Exceptions/UrlGenerationException.php on line 17PHP message: PHP Fatal error:  Uncaught Illuminate\Routing\Exceptions\UrlGenerationException: Missing required parameters for [Route: home] [URI: {locale}]. in /app/vendor/laravel/framework/src/Illuminate/Routing/Exceptions/UrlGenerationException.php:17
+Stack trace:
+#0 /app/vendor/laravel/framework/src/Illuminate/Routing/RouteUrlGenerator.php(91): Illuminate\Routing\Exceptions\UrlGenerationException::forMissingParameters(Object(Illuminate\Routing\Route))
+#1 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(436): Illuminate\Routing\RouteUrlGenerator->to(Object(Illuminate\Routing\Route), Array, true)
+#2 /app/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php(417): Illuminate\Routing\UrlGenerator->toRoute(Object(Illuminate\Routing\Route), Array, true)
+#3 /app/vendor/laravel/framewo

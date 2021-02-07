@@ -13,29 +13,30 @@ class BlogController extends Controller
     {
 
         return view('app.blog.index', [
-            'articles' => Article::with('categories')->where('is_active', true)->orderBy('id','desc')->paginate(6),
-            'categories' => ArticleCategory::with('articles')->orderBy('id')->get(),
-            'populars' => ArticlePopular::with('article')->orderBy('id')->get(),
+            'articles' => Article::with('categories')->lang()->where('is_active', true)->orderBy('id','desc')->paginate(6),
+            'categories' => ArticleCategory::with('articles')->lang()->orderBy('id')->get(),
+            'populars' => ArticlePopular::with('article')->lang()->orderBy('id')->get(),
         ]);
     }
 
-    public function category($slug)
+    public function category($lang, $slug)
     {
-        $category = ArticleCategory::where('slug', $slug)->firstOrFail();
+
+        $category = ArticleCategory::where('slug', $slug)->lang()->firstOrFail();
 
         return view('app.blog.category', [
             'category' => $category,
-            'articles' => $category->articles()->where('is_active', true)->orderBy('id')->paginate(6),
-            'categories' => ArticleCategory::with('articles')->orderBy('id')->get(),
-            'populars' => ArticlePopular::with('article')->orderBy('id')->get(),
+            'articles' => $category->articles()->lang()->where('is_active', true)->orderBy('id')->paginate(6),
+            'categories' => ArticleCategory::with('articles')->lang()->orderBy('id')->get(),
+            'populars' => ArticlePopular::with('article')->lang()->orderBy('id')->get(),
         ]);
     }
 
-    public function article($slug)
+    public function article($lang, $slug)
     {
-        $article = Article::where('slug', $slug)->where('is_active', true)->firstOrFail();
+        $article = Article::where('slug', $slug)->lang()->where('is_active', true)->firstOrFail();
 
-        $lastFiveArticles = Article::with('categories')->where('is_active', true)->orderBy('id')->take(5)->get();
+        $lastFiveArticles = Article::with('categories')->lang()->where('is_active', true)->orderBy('id')->take(5)->get();
 
 
         return view('app.blog.article', [

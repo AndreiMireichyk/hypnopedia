@@ -20,7 +20,17 @@ class Language
 
         $url_locale = $request->segment(1);
 
-        if (in_array($url_locale, config('app.available_locale'))) {
+        if (null === $url_locale) {
+
+            App::setLocale(config('app.locale'));
+
+            return redirect()->route('home', ['locale' => App::getLocale()]);
+
+        } else if ($url_locale === 'laravel-filemanager') {
+
+            return $next($request);
+
+        } else if (in_array($url_locale, config('app.available_locale'))) {
 
             App::setLocale($url_locale);
 
@@ -28,7 +38,7 @@ class Language
 
             App::setLocale(config('app.locale'));
 
-            return redirect()->route('home', ['locale' => App::getLocale()]);
+            abort(404);
         }
 
         return $next($request);

@@ -15,7 +15,7 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($lang)
     {
         return view('cpanel.user.index', [
             'users' => User::with('articles')->get()
@@ -27,7 +27,7 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($lang)
     {
         return view('cpanel.user.create');
     }
@@ -38,7 +38,7 @@ class UserController extends Controller
      * @param UserRequest $request
      * @return void
      */
-    public function store(UserRequest $request)
+    public function store($lang, UserRequest $request)
     {
 
         $user = new User();
@@ -47,7 +47,7 @@ class UserController extends Controller
         $user->setAttribute('password', bcrypt($request->get('password')));
         $user->save();
 
-        return redirect()->route('cp.users.index')->with('alert', 'Пользователь добавлен');
+        return redirect()->route('cp.users.index', app()->getLocale())->with('alert', 'Пользователь добавлен');
     }
 
 
@@ -57,7 +57,7 @@ class UserController extends Controller
      * @param User $user
      * @return Response
      */
-    public function edit(User $user)
+    public function edit($lang, User $user)
     {
         return view('cpanel.user.edit',[
             'user'=>$user
@@ -71,7 +71,7 @@ class UserController extends Controller
      * @param User $user
      * @return void
      */
-    public function update(UserRequest $request, User $user)
+    public function update($lang, UserRequest $request, User $user)
     {
         $user->fill($request->all());
 
@@ -81,7 +81,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('cp.users.index')->with('alert', 'Пользователь изменен');
+        return redirect()->route('cp.users.index', app()->getLocale())->with('alert', 'Пользователь изменен');
     }
 
     /**
@@ -91,9 +91,9 @@ class UserController extends Controller
      * @return Response
      * @throws \Exception
      */
-    public function destroy(User $user)
+    public function destroy($lang, User $user)
     {
         $user->delete();
-        return redirect()->route('cp.users.index')->with('alert', 'Пользователь удален');
+        return redirect()->route('cp.users.index', app()->getLocale())->with('alert', 'Пользователь удален');
     }
 }

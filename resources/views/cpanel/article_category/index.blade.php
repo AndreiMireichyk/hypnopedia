@@ -12,7 +12,7 @@
 
             <div class="d-f jc-sb ai-c">
                 <h4 class="c-grey-900 mT-10 mB-30">Тэги</h4>
-                <a href="{{route('cp.categories.create')}}" class="btn cur-p btn-primary">Добавить тэг</a>
+                <a href="{{route('cp.categories.create', app()->getLocale())}}" class="btn cur-p btn-primary">Добавить тэг</a>
             </div>
 
             <div class="row">
@@ -39,12 +39,12 @@
                             @foreach($categories as $category)
                                 <tr>
                                     <td>{{$category->id}}</td>
-                                    <td><a href="{{route('blog.category', $category->slug)}}">{{$category->title}}</a></td>
+                                    <td><a href="{{route('blog.category', ['slug'=>$category->slug, 'locale'=> app()->getLocale()])}}">{{$category->title}}</a></td>
                                     <td>{{$category->articles()->count()}}</td>
                                     <td class="ta-r">
-                                        <a href="{{route('cp.categories.edit', $category->id)}}"
+                                        <a href="{{route('cp.categories.edit', ['category'=>$category->id, 'locale'=> app()->getLocale()])}}"
                                            class="btn btn-sm cur-p btn-primary">Изменить</a>
-                                        {!! Form::open(['route' => ['cp.categories.destroy', $category->id], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
+                                        {!! Form::open(['route' => ['cp.categories.destroy', ['category'=>$category->id, 'locale'=> app()->getLocale()]], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
                                             <button type="submit" class="btn btn-sm cur-p btn-danger">
                                                 Удалить
                                             </button>

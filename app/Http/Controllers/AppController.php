@@ -60,8 +60,8 @@ class AppController extends Controller
     public function sitemap()
     {
         $data = [
-            'articles' => Article::get(['slug', 'updated_at']),
-            'articles_categories' => ArticleCategory::get(['slug', 'updated_at']),
+            'articles' => Article::get(['slug','lang', 'updated_at']),
+            'articles_categories' => ArticleCategory::get(['slug','lang', 'updated_at']),
         ];
 
         return response()->view('app.sitemap', $data)->header('Content-Type', 'text/xml');

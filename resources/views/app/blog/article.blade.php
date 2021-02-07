@@ -56,7 +56,7 @@
             </div>
             <div class="article__categories categories">
                 @foreach($article->categories as $category)
-                    <a class="categories__item" href="{{route('blog.category', $category->slug)}}">
+                    <a class="categories__item" href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$category->slug])}}">
                         {{$category->title}}
                     </a>
                 @endforeach
@@ -72,9 +72,9 @@
                                 <div class="collection__num">{{$key+1}}</div>
                                 <div class="collection__info">
                                     <a class="collection__article"
-                                       href="{{route('blog.article',$last_article->slug)}}">{{$last_article->title}}</a>
+                                       href="{{route('blog.article',['locale'=>app()->getLocale(), 'slug'=>$last_article->slug])}}">{{$last_article->title}}</a>
                                     <a class="collection__category"
-                                       href="{{route('blog.category', $last_article->categories->first()->slug)}}">{{$last_article->categories->first()->title}}</a>
+                                       href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$last_article->categories->first()->slug])}}">{{$last_article->categories->first()->title}}</a>
                                 </div>
                             </div>
                         @endforeach

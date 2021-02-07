@@ -1,22 +1,5 @@
 import './header.scss';
-(function () {
-    $("[data-menu-spy]").on("click", function (event) {
-
-
-        let id = $(this).attr('href').replace('/', ''),
-
-            top = $(id).offset().top;
-
-        if(top) event.preventDefault();
-        $('body,html').animate({scrollTop: top}, 750);
-    });
-})();
-
-
 import MenuSpy from 'menuspy';
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
     let toggler = document.querySelector('.header__toggle');

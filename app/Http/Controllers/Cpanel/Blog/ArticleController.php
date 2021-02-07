@@ -12,15 +12,16 @@ use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
-    protected $fill = ['title', 'is_active', 'meta_title', 'meta_keys', 'meta_desc', 'announcement', 'cover_path', 'lb_content', 'user_id'];
+    protected $fill = ['title', 'is_active', 'meta_title', 'meta_keys', 'meta_desc', 'announcement', 'cover_path', 'lb_content', 'user_id', 'lang'];
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index()
+    public function index($lang)
     {
-        return view('cpanel.articles.index', ['articles'=>Article::with('categories')->get()]);
+
+        return view('cpanel.articles.index', ['articles'=>Article::with('categories')->lang()->get()]);
     }
 
     /**
@@ -28,10 +29,10 @@ class ArticleController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($lang)
     {
         return view('cpanel.articles.create', [
-            'categories'=>ArticleCategory::all()->pluck('title', 'id')
+            'categories'=>ArticleCategory::lang()->get()->pluck('title', 'id')
         ]);
     }
 
@@ -41,18 +42,18 @@ class ArticleController extends Controller
      * @param ArticleRequest $request
      * @return Response
      */
-    public function store(ArticleRequest $request)
+    public function store($lang, ArticleRequest $request)
     {
 
         $article = new Article();
 
-        $request->merge(['user_id' => Auth::user()->id]);
+        $request->merge(['user_id' => Auth::user()->id, 'lang'=>app()->getLocale()]);
 
         $article->fill($request->only($this->fill))->save();
 
         $article->categories()->sync($request->get('categories'));
 
-        return  redirect()->route('cp.articles.index')->with('alert', "Статья добавлена");
+        return  redirect()->route('cp.articles.index', app()->getLocale())->with('alert', "Статья добавлена");
     }
 
 
@@ -62,11 +63,11 @@ class ArticleController extends Controller
      * @param Article $article
      * @return Response
      */
-    public function edit(Article $article)
+    public function edit($lang, Article $article)
     {
         return view('cpanel.articles.edit', [
             'article'=>$article,
-            'categories'=>ArticleCategory::all()->pluck('title', 'id')
+            'categories'=>ArticleCategory::lang()->get()->pluck('title', 'id')
         ]);
     }
 
@@ -77,13 +78,15 @@ class ArticleController extends Controller
      * @param Article $article
      * @return Response
      */
-    public function update(ArticleRequest $request, Article $article)
+    public function update($lang, ArticleRequest $request, Article $article)
     {
+        $request->merge(['lang'=>app()->getLocale()]);
+
         $article->fill($request->only($this->fill))->save();
 
         $article->categories()->sync($request->get('categories'));
 
-        return  redirect()->route('cp.articles.index')->with('alert', "Статья $article->title изменена");
+        return  redirect()->route('cp.articles.index', app()->getLocale())->with('alert', "Статья $article->title изменена");
     }
 
     /**
@@ -93,10 +96,10 @@ class ArticleController extends Controller
      * @return Response
      * @throws \Exception
      */
-    public function destroy(Article $article)
+    public function destroy($lang, Article $article)
     {
         $article->delete();
 
-        return  redirect()->route('cp.articles.index')->with('alert', "Статья удалена");
+        return  redirect()->route('cp.articles.index', app()->getLocale())->with('alert', "Статья удалена");
     }
 }

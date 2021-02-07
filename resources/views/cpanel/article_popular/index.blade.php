@@ -15,7 +15,7 @@
             </div>
 
             <div class="mB-30">
-                {!! Form::open(['route' => 'cp.populars.store', 'method' => 'post', 'class'=>'d-f jc-sb ai-c']) !!}
+                {!! Form::open(['route' => ['cp.populars.store', ['locale'=>app()->getLocale()]], 'method' => 'post', 'class'=>'d-f jc-sb ai-c']) !!}
                 <div class="fxg-1 pR-15">
                     {!! Form::select('article_id',$articles, old('article_id'), ['class' => 'js-select-tags', 'id'=>'article_id']); !!}
                     @include('cpanel.layouts.form_errors', ['errors'=>$errors->get('article_id')])
@@ -50,12 +50,14 @@
                             @foreach($populars as $popular)
                                 <tr>
                                     <td class="ta-c"><a
-                                            href="{{route('blog.article', $popular->article->slug)}}">{{$popular->article->title}}</a>
+                                            href="{{route('blog.article', ['slug'=>$popular->article->slug, 'locale'=> app()->getLocale()])}}">{{$popular->article->title}}</a>
                                     </td>
                                     <td class="ta-c">{{$popular->article->categories->implode('title', ', ')}}</td>
                                     <td  class="ta-c">0</td>
                                     <td class="ta-r">
-                                        {!! Form::open(['route' => ['cp.populars.destroy', $popular->id], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
+                                        <a
+                                            href="{{route('blog.article', ['slug'=>$popular->article->slug, 'locale'=> app()->getLocale()])}}">{{$popular->article->title}}</a>
+                                        {!! Form::open(['route' => ['cp.populars.destroy', ['locale'=>app()->getLocale(), 'popular'=>$popular->id]], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
                                         <button type="submit" class="btn btn-sm cur-p btn-danger">
                                             Удалить
                                         </button>

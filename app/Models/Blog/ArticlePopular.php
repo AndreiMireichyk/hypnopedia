@@ -11,4 +11,10 @@ class ArticlePopular extends Model
     public function article(){
         return $this->belongsTo(Article::class);
     }
+
+    public function scopeLang($builder)
+    {
+        $builder->where('lang', app()->getLocale());
+        return $builder;
+    }
 }

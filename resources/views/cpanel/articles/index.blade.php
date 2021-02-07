@@ -12,7 +12,7 @@
 
             <div class="d-f jc-sb ai-c">
                 <h4 class="c-grey-900 mT-10 mB-30">Статьи</h4>
-                <a href="{{route('cp.articles.create')}}" class="btn cur-p btn-primary">Добавить статью</a>
+                <a href="{{route('cp.articles.create', app()->getLocale())}}" class="btn cur-p btn-primary">Добавить статью</a>
             </div>
 
             <div class="row">
@@ -54,16 +54,16 @@
                                     <td class="ta-c">
                                         <img src="{{$article->cover_path}}" alt="" style="height: 64px; width: auto;">
                                     </td>
-                                    <td><a href="{{route('blog.article', $article->slug)}}">{{$article->title}}</a></td>
+                                    <td><a href="{{route('blog.article', ['slug'=>$article->slug, 'locale'=> app()->getLocale()])}}">{{$article->title}}</a></td>
                                     <td  class="ta-c">{{$article->categories->implode('title', ', ')}}</td>
                                     <td class="ta-c">{{$article->user->name}}</td>
                                     <td class="ta-c">{{$article->is_active ? 'Да' : 'Нет'}}</td>
                                     <td class="ta-c">0</td>
                                     <td class="ta-c" data-order="{{$article->id}}">{{$article->created_at->format("d-m-Y H:i")}}</td>
                                     <td class="ta-r whs-nw">
-                                        <a href="{{route('cp.articles.edit', $article->id)}}"
+                                        <a href="{{route('cp.articles.edit', ['locale'=> app()->getLocale(), 'article'=>$article->id])}}"
                                            class="btn btn-sm cur-p btn-primary">Изменить</a>
-                                        {!! Form::open(['route' => ['cp.articles.destroy', $article->id], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
+                                        {!! Form::open(['route' => ['cp.articles.destroy',['locale'=> app()->getLocale(), 'article'=>$article->id]], 'method' => 'delete', 'style'=>'display: inline-block;']) !!}
                                             <button type="submit" class="btn btn-sm cur-p btn-danger">
                                                 Удалить
                                             </button>

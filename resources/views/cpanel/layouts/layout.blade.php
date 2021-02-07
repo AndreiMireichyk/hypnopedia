@@ -70,7 +70,7 @@
             <div class="sidebar-logo">
                 <div class="peers ai-c fxw-nw">
                     <div class="peer peer-greed">
-                        <a class="sidebar-link td-n" href="{{route('cp.dashboard')}}">
+                        <a class="sidebar-link td-n" href="{{route('cp.dashboard', app()->getLocale())}}">
                             <div class="peers ai-c fxw-nw">
                                 <div class="peer">
                                     <div class="logo d-f ai-c jc-c" style="display: flex">
@@ -93,7 +93,7 @@
             <ul class="sidebar-menu scrollable pos-r">
 
                 <li class="nav-item mT-30 actived">
-                    <a class="sidebar-link" href="{{route('cp.dashboard')}}">
+                    <a class="sidebar-link" href="{{route('cp.dashboard', app()->getLocale())}}">
                         <span class="icon-holder"><i class="c-blue-500 ti-home"></i> </span>
                         <span class="title">Главная</span>
                     </a>
@@ -109,19 +109,19 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="sidebar-link" href="{{route('cp.articles.index')}}">
+                            <a class="sidebar-link" href="{{route('cp.articles.index', app()->getLocale())}}">
                                 <i class="c-blue-500 ti-pencil-alt2"></i>
                                 Статьи
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-link" href="{{route('cp.categories.index')}}">
+                            <a class="sidebar-link" href="{{route('cp.categories.index', app()->getLocale())}}">
                                 <i class="c-blue-500 ti-tag"></i>
                                 Тэги
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-link" href="{{route('cp.populars.index')}}">
+                            <a class="sidebar-link" href="{{route('cp.populars.index', app()->getLocale())}}">
                                 <i class="c-blue-500 ti-star"></i>
                                 Популярное
                             </a>
@@ -139,7 +139,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="sidebar-link" href="{{route('cp.users.index')}}">
+                    <a class="sidebar-link" href="{{route('cp.users.index', app()->getLocale())}}">
                         <span class="icon-holder">
                             <i class="c-blue-500 ti-user"></i>
                         </span>
@@ -161,6 +161,27 @@
                 </ul>
 
                 <ul class="nav-right">
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                            <div class="peer mR-10">
+                                <img class="" src="/images/{{app()->getLocale() === 'en' ? 'en' : 'ru'}}.svg" alt="">
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu fsz-sm">
+                            <li>
+                                <a href="{{route('lang.en')}}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                    <img class="" src="/images/en.svg" alt="">
+                                    <span>English</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('lang.ru')}}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                    <img class="" src="/images/ru.svg" alt="">
+                                    <span>Русский</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
@@ -173,7 +194,7 @@
                         </a>
                         <ul class="dropdown-menu fsz-sm">
                             <li>
-                                <a href="{{route('cp.users.edit', Auth::user()->id)}}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                                <a href="{{route('cp.users.edit', [app()->getLocale(), Auth::user()->id])}}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                                     <i class="ti-settings mR-10"></i>
                                     <span>Настройки</span>
                                 </a>
@@ -188,7 +209,7 @@
                                     <i class="ti-power-off mR-10"></i>
                                     <span>Выйти</span>
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST"
                                       style="display: none;">
                                     @csrf
                                 </form>

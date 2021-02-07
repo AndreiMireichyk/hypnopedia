@@ -33,12 +33,12 @@
                 </div>
             @endif
 
-            {!! Form::open(['route' => 'cp.users.store', 'method' => 'post']) !!}
+            {!! Form::open(['route' => ['cp.users.store', ['locale'=>app()->getLocale()]], 'method' => 'post']) !!}
             <div class="d-f jc-sb ai-c">
                 <h4 class="c-grey-900 mT-10 mB-30">Добавление пользователя</h4>
                 <div>
                     <button type="submit" class="btn cur-p btn-primary">Сохранить</button>
-                    <a href="{{route('cp.users.index')}}" class="btn cur-p btn-outline-primary">Назад</a>
+                    <a href="{{route('cp.users.index', app()->getLocale())}}" class="btn cur-p btn-outline-primary">Назад</a>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
                 <h4 class="c-grey-900 mT-10 mB-30">&nbsp;</h4>
                 <div>
                     <button type="submit" class="btn cur-p btn-primary">Сохранить</button>
-                    <a href="{{route('cp.users.index')}}" class="btn cur-p btn-outline-primary">Назад</a>
+                    <a href="{{route('cp.users.index', app()->getLocale())}}" class="btn cur-p btn-outline-primary">Назад</a>
                 </div>
             </div>
             {!! Form::close() !!}
