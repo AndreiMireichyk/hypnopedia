@@ -25,7 +25,6 @@ Route::namespace('Cpanel')->prefix('cp')->name('cp.')->middleware('auth')->group
     //Route::resource('/users', 'DashBoardController@index')->name('dashboard');
 });
 
-
 Route::get('/', 'AppController@home')->name('home');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
 Route::post('/ph_subscribe', 'AppController@phSubscribe')->name('phSubscribe');
