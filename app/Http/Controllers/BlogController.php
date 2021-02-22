@@ -14,7 +14,7 @@ class BlogController extends Controller
 
         return view('app.blog.index', [
             'articles' => Article::with('categories')->lang()->where('is_active', true)->orderBy('id','desc')->paginate(6),
-            'categories' => ArticleCategory::whereHas('articles', function ($q){
+            'categories' => ArticleCategory::whereHas('lastFourArticles', function ($q){
                 return $q->where('is_active', true);
             })->lang()->orderBy('id')->get(),
             'populars' => ArticlePopular::with('article')->lang()->orderBy('id')->get(),

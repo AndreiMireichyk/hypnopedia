@@ -32,4 +32,8 @@ class ArticleCategory extends Model
     public function articles(){
         return $this->belongsToMany(Article::class)->orderBy('id','desc');
     }
+
+    public function lastFourArticles(){
+        return $this->belongsToMany(Article::class)->take(4)->orderBy('id','desc');
+    }
 }

@@ -41,7 +41,7 @@
                         <div class="categories__articles top-article tab-pane {{$categories->first()->id === $category->id ? 'active' : ''}}"
                              id="cat-{{$category->id}}" role="tabpanel">
 
-                            @foreach ($category->articles->take(1) as $article)
+                            @foreach ($category->lastFourArticles->take(1) as $article)
                                 <div class="top-article__left">
                                     <div class="lg-post">
                                         <a class="lg-post__cover" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}"
