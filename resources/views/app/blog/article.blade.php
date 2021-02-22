@@ -44,7 +44,7 @@
                 {!! $article->lb_content !!}
             </div>
             <div class="article__group">
-                <div class="article__published">Publication date: {{$article->created_at->diffForHumans()}}</div>
+                <div class="article__published">@lang('blog.pubAt'): {{$article->created_at->diffForHumans()}}</div>
                 <div class="article__socials socials">
                     <a class="socials__item fb-c" href="javascript:void(0)"
                        onclick="window.share.facebook('{{url()->current()}}','{{$article->title}}', '{{URL::asset($article->cover_path)}}','{{$article->meta_desc}}')"></a>
@@ -65,7 +65,7 @@
         <section class="article__aside">
             @if($lastFiveArticles->isNotEmpty())
                 <div class="collection">
-                    <div class="collection__title">Latest news</div>
+                    <div class="collection__title">@lang('blog.last_news')</div>
                     <div class="collection__list">
                         @foreach($lastFiveArticles as $key=>$last_article)
                             <div class="collection__item">

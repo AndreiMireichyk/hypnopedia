@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -19,6 +20,11 @@ class Language
     {
 
         $url_locale = $request->segment(1);
+
+        if($url_locale === 'ru'){
+            setlocale(LC_TIME, 'ru_RU.UTF-8');
+            Carbon::setLocale('ru');
+        }
 
         if (null === $url_locale) {
 

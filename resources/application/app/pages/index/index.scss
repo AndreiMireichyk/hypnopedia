@@ -559,7 +559,7 @@
 
     &__action {
         text-align: center;
-
+        padding: 0 25px;
     }
 
     //--Responsive
@@ -831,14 +831,16 @@
         &__quote {
             min-width: 460px;
             margin: 0 auto 44px auto;
+            width: 100%;
         }
 
         &__quote-text {
             font-weight: normal;
             font-size: 20px;
-            line-height: 40px;
+            line-height: 30px;
             letter-spacing: 1px;
             color: #24375F;
+            text-align: center;
         }
 
         &__quote-author {
@@ -1065,7 +1067,7 @@
 
     @include sm-block {
         font-size: 22px;
-        padding: 15px 40px;
+        padding: 15px 28px;
     }
 }
 

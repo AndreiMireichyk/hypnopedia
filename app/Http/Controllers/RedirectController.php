@@ -32,7 +32,8 @@ class RedirectController extends Controller
 
     public function category($slug)
     {
-        $category = ArticleCategory::where('slug', $slug)->findOrFail();
+
+        $category = ArticleCategory::where('slug', $slug)->firstOrFail();
 
         return redirect()->route('blog.category', ['locale'=>$category->lang, 'slug'=>$category->slug], 301);
 

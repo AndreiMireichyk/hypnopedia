@@ -36,35 +36,36 @@
         <div class="header__menu">
             @if (Route::currentRouteName() == 'home')
                 <div class="active">
-                    <a class="header__menu-item" href="/{{app()->getLocale()}}#about" data-menu-spy>About</a>
+                    <a class="header__menu-item" href="/{{app()->getLocale()}}#about" data-menu-spy>@lang('header.about')</a>
                 </div>
             @else
                 <div>
-                    <a class="header__menu-item" href="/{{app()->getLocale()}}#about" data-menu-spy>About</a>
+                    <a class="header__menu-item" href="/{{app()->getLocale()}}#about" data-menu-spy>@lang('header.about')</a>
                 </div>
             @endif
-            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#how_it_work" data-menu-spy>HOW IT WORKS</a></div>
-            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#features" data-menu-spy>FEATURES</a></div>
-            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#science" data-menu-spy>SCIENCE</a></div>
-            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#faq" data-menu-spy>FAQ</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#how_it_work" data-menu-spy>@lang('header.how_it_work')</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#features" data-menu-spy>@lang('header.features')</a></div>
+
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#sc" data-menu-spy>@lang('header.science')</a></div>
+            <div><a class="header__menu-item" href="/{{app()->getLocale()}}#faq" data-menu-spy>@lang('header.faq')</a></div>
 
             @if (in_array(Route::currentRouteName(), ['blog', 'blog.article', 'blog.category']))
                 <div class="active">
-                    <a class="header__menu-item active" href="{{route('blog', ['locale'=>app()->getLocale()])}}">Blog</a>
+                    <a class="header__menu-item active" href="{{route('blog', ['locale'=>app()->getLocale()])}}">@lang('header.blog')</a>
                 </div>
             @else
                 <div>
-                    <a class="header__menu-item" href="{{route('blog', ['locale'=>app()->getLocale()])}}">Blog</a>
+                    <a class="header__menu-item" href="{{route('blog', ['locale'=>app()->getLocale()])}}">@lang('header.blog')</a>
                 </div>
             @endif
 
             @if (Route::currentRouteName() == 'contacts')
                 <div class="active">
-                    <a class="header__menu-item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">Contact</a>
+                    <a class="header__menu-item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">@lang('header.contacts')</a>
                 </div>
             @else
                 <div>
-                    <a class="header__menu-item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">Contact</a>
+                    <a class="header__menu-item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">@lang('header.contacts')</a>
                 </div>
             @endif
                 <div>
@@ -92,11 +93,11 @@
             <a class="menu__item" href="{{route('home', ['locale'=>app()->getLocale()])}}">
                 <img src="{{asset('/images/logo-v1.svg')}}?{{env('VERSION')}}" alt="logo">
             </a>
-            <a class="menu__item" href="{{asset('/assets/docs/PrivacyPolicy.pdf')}}?{{env('VERSION')}}" target="_blank">Privacy policy</a>
-            <a class="menu__item" href="{{asset('/assets/docs/Terms&Conditions.pdf')}}?{{env('VERSION')}}" target="_blank">Terms of
-                Service</a>
-            <a class="menu__item get-app" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">GET THE APP</a>
-            <a class="menu__item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">CONTACTS</a>
+            <a class="menu__item" href="{{asset('/assets/docs/PrivacyPolicy.pdf')}}?{{env('VERSION')}}" target="_blank">@lang('footer.privacy_policy')</a>
+            <a class="menu__item" href="{{asset('/assets/docs/Terms&Conditions.pdf')}}?{{env('VERSION')}}" target="_blank">
+                @lang('footer.terms_of_service')</a>
+            <a class="menu__item get-app" href="https://hypnopedia.onelink.me/gHSS/f769efa4" target="_blank">@lang('footer.get_the_app')</a>
+            <a class="menu__item" href="{{route('contacts', ['locale'=>app()->getLocale()])}}">@lang('footer.contacts')</a>
         </div>
         <div class="footer__socials socials">
             <a class="socials__item tw" href="https://twitter.com/Hypnopedia_app" target="_blank"></a>

@@ -70,6 +70,7 @@
     }
 
     &__menu-item {
+        white-space: nowrap;
         padding-left: 40px;
         text-transform: uppercase;
         color: $white;
@@ -138,6 +139,7 @@
     padding-left: 28px;
     position: relative;
     cursor: pointer;
+    min-width: 26px;
 
     &:hover &__list{
         display: block;
@@ -202,7 +204,7 @@
         }
 
         &__item{
-            display: none;
+            display: flex;
             justify-content: flex-end;
 
             span{
@@ -214,6 +216,9 @@
             &.switch{
                 display: flex;
             }
+        }
+        &__item.active{
+            display: none;
         }
     }
 }

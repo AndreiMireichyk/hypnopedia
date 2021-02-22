@@ -26,7 +26,7 @@
             <p class="category__desc"> {!! $category->lb_content !!}</p>
         </section>
 
-        <section class="blog__title">Latest news</section>
+        <section class="blog__title">@lang('blog.last_news')</section>
 
         <section class="blog__body body">
             <div class="body__main">
@@ -47,7 +47,7 @@
                                 {{$article->created_at->diffForHumans()}}
                             </a>
                             <a class="md-post__read" href="{{route('blog.article', ['locale'=>app()->getLocale(), 'slug'=>$article->slug])}}">
-                                READ {{$article->readingMin}} MIN
+                                @lang('blog.read', ['value'=>$article->readingMin])
                             </a>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
             <div class="body__aside">
                 <div class="aside">
                     @if($populars->isNotEmpty())
-                        <div class="aside__title">Popular articles</div>
+                        <div class="aside__title">@lang('blog.popular_news')</div>
                         <div class="popular">
                             @foreach($populars as $key => $popular)
                                 <div class="popular__item">
@@ -72,7 +72,7 @@
                             @endforeach
                         </div>
                     @endif
-                    <div class="aside__title">Tags</div>
+                    <div class="aside__title">@lang('blog.tags')</div>
                     <div class="aside-cat">
                         @foreach($categories as $key=>$category)
                             <a class="aside-cat__item" href="{{route('blog.category', ['locale'=>app()->getLocale(), 'slug'=>$category->slug])}}">

@@ -3,25 +3,25 @@
         <div class="form" v-if="!accept">
             <h1 class="form__title">Contact</h1>
             <div class="form__input" :class="{'has-error': error.name.length }">
-                <input placeholder="Name" v-model="name">
+                <input :placeholder="$lang.name" v-model="name">
                 <small>{{ error.name }}</small>
             </div>
             <div class="form__input" :class="{'has-error': error.contact.length }">
-                <input placeholder="Contact" v-model="contact">
+                <input :placeholder="$lang.contact" v-model="contact">
                 <small>{{ error.contact }}</small>
             </div>
             <div class="form__input" :class="{'has-error': error.message.length }">
-                <textarea placeholder="Message" v-model="message"/>
+                <textarea :placeholder="$lang.message" v-model="message"/>
                 <small>{{ error.message }}</small>
             </div>
             <div class="form__checkbox">
                 <input id="accept" type="checkbox" v-model="accept_policy">
-                <label for="accept">I accept personal data processing agreement</label>
+                <label for="accept">{{$lang.terms}}</label>
             </div>
-            <div class="form__action"><a class="form__btn" href="javascript:void(0)" :class="{'disabled': !accept_policy || loading }" @click.stop="send">Submit</a></div>
+            <div class="form__action"><a class="form__btn" href="javascript:void(0)" :class="{'disabled': !accept_policy || loading }" @click.stop="send">{{$lang.submit}}</a></div>
         </div>
         <div class="accept" v-else><a class="accept__close" href="javascript:void(0)" @click.stop="accept=false"/><img class="accept__icon" src="./assets/accept.svg" alt="accept">
-            <p class="accept__text">Excellent! We'll contact you soon.</p>
+            <p class="accept__text">{{$lang.tnx}}</p>
         </div>
     </div>
 </template>
