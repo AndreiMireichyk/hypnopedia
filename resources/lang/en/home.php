@@ -66,7 +66,7 @@ return [
 
     ],
     'sc4' => [
-        'title' => 'Наука',
+        'title' => 'Science',
         'name'=>'Andrew Sokol',
         'position'=>'CEO',
         'role'=>'Brain Geek, Associate Professor, MD,<br> PhD Belarusian state medical',
